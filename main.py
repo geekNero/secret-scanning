@@ -1,7 +1,18 @@
-import subprocess
-import os
+import json
+from tabulate import tabulate
 
-a = subprocess.run(['ls'], capture_output=True, text=True)
-output_path = os.getenv('GITHUB_OUTPUT')
-with open(output_path, "a") as myfile:
-    myfile.write(f"{a.stdout}")
+# Read JSON data from file
+with open('data.json') as f:
+    data = json.load(f)
+
+# Extract relevant fields and create a list of rows
+table_data = [[entry['name'], entry['description']] for entry in data]
+
+# Define column headers
+headers = ['Name', 'Description']
+
+# Create the tabular representation
+table = tabulate(table_data, headers=headers, tablefmt='grid')
+
+# Print the tabular data
+print(table)
