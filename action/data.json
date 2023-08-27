@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Secret Scanning",
+    "description": "Detects secrets in the code using detect-secrets library"
+  },
+  {
+    "name": "Vulnerability Scanning",
+    "description": "Detects vulnerabilities in the code using semgrep"
+  }
+]
