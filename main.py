@@ -119,7 +119,6 @@ if __name__ == '__main__':
     if prev_baseline:
         secret_collection = SecretsCollection().load_from_baseline(prev_baseline)
     file_mapping = get_file_mapping()
-    print(file_mapping)
     # try:
     with transient_settings(config=config):
         new_secrets = SecretsCollection()
