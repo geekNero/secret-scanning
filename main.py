@@ -122,20 +122,21 @@ if __name__ == '__main__':
     file_mapping = get_file_mapping()
     print(file_mapping)
     # try:
-    new_secrets = SecretsCollection()
-    new_secrets.scan_files(*(file_mapping.keys()))
-    new_secrets.rename_files(filelist=file_mapping)
-    new_secrets.add_commit(commit_id)
-    new_secrets.add_branch(branch)
-    diff_secrets = secret_collection.get_diff(new_secrets)
-    diff_secrets = parse_secrets(diff_secrets, [])
-    all_secrets = parse_secrets(new_secrets, [])
-    if all_secrets:
-        print_table(all_secrets)
-    else:
-        print("No Secrets Detected")
-    send_diff(diff_secrets)
-    baseline.save_to_file(new_secrets, ".new_baseline")
+    with transient_settings(config=config):
+        new_secrets = SecretsCollection()
+        new_secrets.scan_files(*(file_mapping.keys()))
+        new_secrets.rename_files(filelist=file_mapping)
+        new_secrets.add_commit(commit_id)
+        new_secrets.add_branch(branch)
+        diff_secrets = secret_collection.get_diff(new_secrets)
+        diff_secrets = parse_secrets(diff_secrets, [])
+        all_secrets = parse_secrets(new_secrets, [])
+        if all_secrets:
+            print_table(all_secrets)
+        else:
+            print("No Secrets Detected")
+        send_diff(diff_secrets)
+        baseline.save_to_file(new_secrets, ".new_baseline")
     upload_baseline()
     # except Exception as e:
     #     print(f"Secret Scanning Failed: {e}")
