@@ -120,6 +120,7 @@ if __name__ == '__main__':
     if prev_baseline:
         secret_collection = SecretsCollection().load_from_baseline(prev_baseline)
     file_mapping = get_file_mapping()
+    print(file_mapping)
     # try:
     new_secrets = SecretsCollection()
     new_secrets.scan_files(*(file_mapping.keys()))
