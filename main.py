@@ -76,7 +76,7 @@ def get_config():
 
 
 def get_file_mapping():
-    root_dir = "action"
+    root_dir = "actions"
     file_map = dict()
 
     for dir_, _, files in os.walk(root_dir):
@@ -88,7 +88,7 @@ def get_file_mapping():
 
 def print_table(secrets):
     headers = list(secrets[0].keys())
-    display_headers = ["Commit Hash","File Name", "Line Number","Regex", "Hashed Value", "Is HashedValue Skipped", "Branch", "Is Verified", "Is Valid"]
+    display_headers = ["Commit Hash", "File Name", "Line Number", "Regex", "Hashed Value", "Is HashedValue Skipped", "Branch", "Is Verified", "Is Valid"]
     table_data = [[entry[key] for key in headers] for entry in secrets]
     table = tabulate(table_data, headers=display_headers, tablefmt='grid')
     print(table)
