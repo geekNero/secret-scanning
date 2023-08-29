@@ -87,9 +87,8 @@ def get_file_mapping():
 
 
 def print_table(secrets):
-    headers = list(secrets[0].keys())
-    display_headers = ["Commit Hash", "File Name", "Line Number", "Regex", "Hashed Value", "Is HashedValue Skipped", "Branch", "Is Verified", "Is Valid"]
-    table_data = [[entry[key] for key in headers] for entry in secrets]
+    display_headers = ["Commit SHA", "File Name", "Line Number", "Plugin", "Is Verified", "Is Valid"]
+    table_data = [[entry["commitHash"], entry["fileName"], entry["lineNumber"], entry["regex"], entry["isVerified"], entry["isValid"]] for entry in secrets]
     table = tabulate(table_data, headers=display_headers, tablefmt='grid')
     print(table)
 
@@ -132,6 +131,7 @@ if __name__ == '__main__':
         diff_secrets = parse_secrets(diff_secrets, [])
         all_secrets = parse_secrets(new_secrets, [])
         if all_secrets:
+            print(f"Branch: {branch}")
             print_table(all_secrets)
         else:
             print("No Secrets Detected")
