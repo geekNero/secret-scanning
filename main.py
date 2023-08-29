@@ -129,7 +129,10 @@ if __name__ == '__main__':
     diff_secrets = secret_collection.get_diff(new_secrets)
     diff_secrets = parse_secrets(diff_secrets, [])
     all_secrets = parse_secrets(new_secrets, [])
-    print_table(all_secrets)
+    if all_secrets:
+        print_table(all_secrets)
+    else:
+        print("No Secrets Detected")
     send_diff(diff_secrets)
     baseline.save_to_file(new_secrets, ".new_baseline")
     upload_baseline()
