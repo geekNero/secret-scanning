@@ -7,13 +7,13 @@ from detect_secrets.settings import default_settings, get_settings
 from typing import List, Any
 
 
-def parse_secrets(secrets: Any, commit: str, exclusions: List) -> list:
+def parse_secrets(secrets: Any, exclusions: List) -> list:
     new_secrets = []
     secrets = secrets.json()
     for group in secrets:
         for secret in secrets[group]:
             new_secret = {
-                "commitHash": commit,
+                "commitHash": secret['commit'],
                 "fileName": secret['filename'],
                 "lineNumber": secret['line_number'],
                 "regex": secret['type'],
@@ -127,10 +127,9 @@ if __name__ == '__main__':
     new_secrets.add_commit(commit_id)
     new_secrets.add_branch(branch)
     diff_secrets = secret_collection.get_diff(new_secrets)
-    temp = SecretsCollection()
-    all_secrets = temp.get_diff(new_secrets)
+    diff_secrets = parse_secrets(diff_secrets, [])
+    all_secrets = parse_secrets(new_secrets, [])
     print_table(all_secrets)
-    del temp
     send_diff(diff_secrets)
     baseline.save_to_file(new_secrets, ".new_baseline")
     upload_baseline()
