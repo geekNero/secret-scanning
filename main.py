@@ -120,19 +120,19 @@ if __name__ == '__main__':
     if prev_baseline:
         secret_collection = SecretsCollection().load_from_baseline(prev_baseline)
     file_mapping = get_file_mapping()
-    try:
-        new_secrets = SecretsCollection()
-        new_secrets.scan_files(*(file_mapping.keys()))
-        new_secrets.rename_files(filelist=file_mapping)
-        new_secrets.add_commit(commit_id)
-        new_secrets.add_branch(branch)
-        diff_secrets = secret_collection.get_diff(new_secrets)
-        temp = SecretsCollection()
-        all_secrets = temp.get_diff(new_secrets)
-        print_table(all_secrets)
-        del temp
-        send_diff(diff_secrets)
-        baseline.save_to_file(new_secrets, ".new_baseline")
-        upload_baseline()
-    except Exception as e:
-        print(f"Secret Scanning Failed: {e}")
+    # try:
+    new_secrets = SecretsCollection()
+    new_secrets.scan_files(*(file_mapping.keys()))
+    new_secrets.rename_files(filelist=file_mapping)
+    new_secrets.add_commit(commit_id)
+    new_secrets.add_branch(branch)
+    diff_secrets = secret_collection.get_diff(new_secrets)
+    temp = SecretsCollection()
+    all_secrets = temp.get_diff(new_secrets)
+    print_table(all_secrets)
+    del temp
+    send_diff(diff_secrets)
+    baseline.save_to_file(new_secrets, ".new_baseline")
+    upload_baseline()
+    # except Exception as e:
+    #     print(f"Secret Scanning Failed: {e}")
