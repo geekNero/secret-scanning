@@ -128,7 +128,7 @@ def get_config(custom_regex, exclusions):
         else:
             i['regex'] = val
     mapping = {}
-    with open(' validations_mapping.json') as file:
+    with open('validations_mapping.json') as file:
         mapping = json.load(file)
     validations = []
 
