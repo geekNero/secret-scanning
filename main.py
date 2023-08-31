@@ -36,6 +36,8 @@ def parse_secrets(secrets: Any, exclusions: List) -> list:
     secrets = secrets.json()
     for group in secrets:
         for secret in secrets[group]:
+            if secret['hashed_secret'] in exclusions:
+                continue
             new_secret = {
                 "commitHash": secret['commit'],
                 "fileName": secret['filename'],
@@ -147,7 +149,7 @@ def get_config(custom_regex, exclusions):
     return config
 
 
-def get_file_mapping():
+def get_file_mapping(exclusions):
     root_dir = "actions"
     file_map = dict()
     with open("binary_extensions.json", 'r') as f:
@@ -159,6 +161,8 @@ def get_file_mapping():
         for file_name in files:
             path = os.path.join(dir_, file_name)
             mapping_path = os.path.relpath(path, root_dir)
+            if mapping_path in exclusions:
+                continue
             try:
                 with open(path, 'r') as f:
                     content = f.read()
@@ -197,7 +201,7 @@ def upload_baseline():
 if __name__ == '__main__':
     secret_collection = SecretsCollection()
     prev_baseline = get_baseline()
-    config = get_config()
+    config = get_config([], [])
     commit_id = get_commit_sha()
     branch = get_branch()
     if prev_baseline:
