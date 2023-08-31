@@ -206,7 +206,7 @@ if __name__ == '__main__':
     branch = get_branch()
     if prev_baseline:
         secret_collection = SecretsCollection().load_from_baseline(prev_baseline)
-    file_mapping = get_file_mapping()
+    file_mapping = get_file_mapping([])
     # try:
     with transient_settings(config=config):
         new_secrets = SecretsCollection()
