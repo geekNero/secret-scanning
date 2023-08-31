@@ -1,10 +1,34 @@
 import os
+import json
+import requests
 from tabulate import tabulate
 from detect_secrets.core import baseline
 from detect_secrets import SecretsCollection
 from detect_secrets.settings import transient_settings
 from detect_secrets.settings import default_settings, get_settings
 from typing import List, Any
+import magic
+
+
+class Validation:
+    def __init__(self, headers: dict = None, url: str = None, method: str = "get"):
+        self.headers = headers
+        self.url = url
+        self.method = method
+
+    def parse_headers(self, secret):
+        for key in self.headers:
+            self.headers[key] = self.headers[key].replace("{secret}", secret)
+
+    def validate(self, secret):
+        self.parse_headers(secret)
+        if self.method.lower() == "post":
+            response = requests.post(url=self.url, headers=self.headers)
+        else:
+            response = requests.get(url=self.url, headers=self.headers)
+        if response.status_code == 200:
+            return True
+        return False
 
 
 def parse_secrets(secrets: Any, exclusions: List) -> list:
@@ -35,6 +59,25 @@ def parse_secrets(secrets: Any, exclusions: List) -> list:
     return new_secrets
 
 
+def is_extension_binary(file_name, binary_extensions):
+    file_extension = os.path.splitext(file_name)[1]
+    if file_extension in binary_extensions:
+        print(f"skipping binary file: {file_name}")
+        return True
+    return False
+
+
+def is_content_binary(content, binary_mimetypes):
+    # Initialize the magic library
+    file_type_checker = magic.Magic(mime=True)
+
+    # Determine the MIME type of the file
+    mime_type = file_type_checker.from_buffer(content)
+
+    # Check if the file is binary
+    return mime_type in binary_mimetypes
+
+
 def get_commit_sha():
     """
     :return: Commit sha
@@ -57,32 +100,73 @@ def get_baseline():
     return None
 
 
-def get_config():
+def get_config(custom_regex, exclusions):
     """
     To be implemented
     :return: Config for secret scanning
     """
     plugins_used = []
+    regexes = []
     with default_settings():
         plugins = list(get_settings().plugins.keys())
-
         for plugin in plugins:
             plugins_used.append({'name': plugin})
+
+    for regex in custom_regex:
+        regexes.append({'name': regex, 'regex': custom_regex[regex]})
+
+    with open('default_regexes.json', 'r') as file:
+        default_regex = json.load(file)
+    regexes = regexes + default_regex['patterns']
+
+    for i in regexes:
+        val = repr(i['regex'])[1:-1]
+        if val in exclusions:
+            regexes.remove(i)
+        else:
+            i['regex'] = val
+    mapping = {}
+    with open(' validations_mapping.json') as file:
+        mapping = json.load(file)
+    validations = []
+
+    for name in mapping:
+        val = Validation(headers=mapping[name]["headers"], url=mapping[name]["url"], method=mapping[name]["method"])
+        pair = {"name": name, "function": val.validate}
+        validations.append(pair)
     config = {
         'plugins_used': plugins_used,
+        'custom_regex': regexes,
+        'verify': validations,
+        'filters_used': [
+            {"path": "detect_secrets.filters.common.is_ignored_due_to_verification_policies",
+             "min_level": 1,
+             }
+        ]
     }
-
     return config
 
 
 def get_file_mapping():
     root_dir = "actions"
     file_map = dict()
+    with open("binary_extensions.json", 'r') as f:
+        binary_extensions = f.read()
+    with open("binary_mimetypes.json", 'r') as f:
+        binary_mimetypes = f.read()
 
     for dir_, _, files in os.walk(root_dir):
         for file_name in files:
             path = os.path.join(dir_, file_name)
-            file_map[path] = os.path.relpath(path, root_dir)
+            mapping_path = os.path.relpath(path, root_dir)
+            try:
+                with open(path, 'r') as f:
+                    content = f.read()
+            except:
+                continue
+            if is_extension_binary(mapping_path, binary_extensions) or is_content_binary(content, binary_mimetypes):
+                continue
+            file_map[path] = mapping_path
     return file_map
 
 

@@ -1,0 +1,4388 @@
+{
+	"patterns": [
+		{
+			"name": "Twitter Secret Key",
+			"regex": "(?i)twitter(.{0,20})?[0-9a-z]{35,44}"
+		},
+		{
+			"name": "Twitter Client ID",
+			"regex": "(?i)twitter(.{0,20})?[0-9a-z]{18,25}"
+		},
+		{
+			"name": "LinkedIn Client ID",
+			"regex": "(?i)linkedin(.{0,20})?(?-i)[0-9a-z]{12}"
+		},
+		{
+			"name": "LinkedIn Secret Key",
+			"regex": "(?i)linkedin(.{0,20})?[0-9a-z]{16}"
+		},
+		{
+			"name": "Asymmetric Private Key",
+			"regex": "-----BEGIN ((EC|PGP|DSA|RSA|OPENSSH) )?PRIVATE KEY( BLOCK)?-----"
+		},
+		{
+			"name": "Google (GCP) Service Account",
+			"regex": "\"type\": \"service_account\""
+		},
+		{
+			"name": "Heroku API key",
+			"regex": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
+		},
+		{
+			"name": "Mailgun API key 2",
+			"regex": "((?i)(mailgun|mg)(.{0,20})?)?key-[0-9a-z]{32}"
+		},
+		{
+			"name": "PayPal Braintree access token",
+			"regex": "access_token\\$production\\$[0-9a-z]{16}\\$[0-9a-f]{32}"
+		},
+		{
+			"name": "Picatic API key",
+			"regex": "sk_live_[0-9a-z]{32}"
+		},
+		{
+			"name": "Dynatrace token",
+			"regex": "dt0[a-zA-Z]{1}[0-9]{2}\\.[A-Z0-9]{24}\\.[A-Z0-9]{64}"
+		},
+		{
+			"name": "Shopify shared secret",
+			"regex": "shpss_[a-fA-F0-9]{32}"
+		},
+		{
+			"name": "Shopify access token",
+			"regex": "shpat_[a-fA-F0-9]{32}"
+		},
+		{
+			"name": "Shopify custom app access token",
+			"regex": "shpca_[a-fA-F0-9]{32}"
+		},
+		{
+			"name": "Shopify private app access token",
+			"regex": "shppa_[a-fA-F0-9]{32}"
+		},
+		{
+			"name": "PyPI upload token",
+			"regex": "pypi-AgEIcHlwaS5vcmc[A-Za-z0-9-_]{50,1000}"
+		},
+		{
+			"name": "AWS cred file info",
+			"regex": "(?i)(aws_access_key_id|aws_secret_access_key)(.{0,20})?=.[0-9a-zA-Z\\/+]{20,40}"
+		},
+		{
+			"name": "Github",
+			"regex": "(?i)github(.{0,20})?(?-i)['\\\"][0-9a-zA-Z]{35,40}['\\\"]"
+		},
+		{
+			"name": "EC",
+			"regex": "-----BEGIN EC PRIVATE KEY-----"
+		},
+		{
+			"name": "Env Var",
+			"regex": "(?i)(apikey|secret|key|api|password|pass|pw|host)=[0-9a-zA-Z-_.{}]{4,120}"
+		},
+		{
+			"name": "Generic Credential",
+			"regex": "(?i)(dbpasswd|dbuser|dbname|dbhost|api_key|apikey|secret|key|api|password|user|guid|hostname|pw|auth)(.{0,20})?['|\"]([0-9a-zA-Z-_\\/+!{}/=]{4,120})['|\"]"
+		},
+		{
+			"name": "WP-Config",
+			"regex": "define(.{0,20})?(DB_CHARSET|NONCE_SALT|LOGGED_IN_SALT|AUTH_SALT|NONCE_KEY|DB_HOST|DB_PASSWORD|AUTH_KEY|SECURE_AUTH_KEY|LOGGED_IN_KEY|DB_NAME|DB_USER)(.{0,20})?['|\"].{10,120}['|\"]"
+		},
+		{
+			"name": "Ipstack",
+			"regex": "(?i)(?:ipstack).{0,40}\\b([a-fA-f0-9]{32})\\b"
+		},
+		{
+			"name": "Datagov",
+			"regex": "(?i)(?:data.gov).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+		},
+		{
+			"name": "Faceplusplus",
+			"regex": "(?i)(?:faceplusplus).{0,40}\\b([0-9a-zA-Z_-]{32})\\b"
+		},
+		{
+			"name": "Dotmailer - 1",
+			"regex": "(?i)(?:dotmailer).{0,40}\\b(apiuser-[a-z0-9]{12}@apiconnector.com)\\b"
+		},
+		{
+			"name": "Dotmailer - 2",
+			"regex": "(?i)(?:dotmailer).{0,40}\\b([a-zA-Z0-9\\S]{8,24})\\b"
+		},
+		{
+			"name": "Geoapify",
+			"regex": "(?i)(?:geoapify).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Ambee",
+			"regex": "(?i)(?:ambee).{0,40}\\b([0-9a-f]{64})\\b"
+		},
+		{
+			"name": "Fulcrum",
+			"regex": "(?i)(?:fulcrum).{0,40}\\b([a-z0-9]{80})\\b"
+		},
+		{
+			"name": "Githubapp - 1",
+			"regex": "(?i)(?:github).{0,40}\\b([0-9]{6})\\b"
+		},
+		{
+			"name": "Githubapp - 2",
+			"regex": "(?i)(?:github).{0,40}(-----BEGIN RSA PRIVATE KEY-----\\s[A-Za-z0-9+\\/\\s]*\\s-----END RSA PRIVATE KEY-----)"
+		},
+		{
+			"name": "Front",
+			"regex": "(?i)(?:front).{0,40}\\b([0-9a-zA-Z]{36}.[0-9a-zA-Z\\.\\-\\_]{188,244})\\b"
+		},
+		{
+			"name": "Plivo - 1",
+			"regex": "(?i)(?:plivo).{0,40}\\b([A-Za-z0-9_-]{40})\\b"
+		},
+		{
+			"name": "Plivo - 2",
+			"regex": "(?i)(?:plivo).{0,40}\\b([A-Z]{20})\\b"
+		},
+		{
+			"name": "Splunkobservabilitytoken",
+			"regex": "(?i)(?:splunk).{0,40}\\b([a-z0-9A-Z]{22})\\b"
+		},
+		{
+			"name": "User",
+			"regex": "(?i)(?:user).{0,40}\\b([a-zA-Z0-9-._+=]{64})\\b"
+		},
+		{
+			"name": "Tyntec",
+			"regex": "(?i)(?:tyntec).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Survicate",
+			"regex": "(?i)(?:survicate).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "M3o",
+			"regex": "(?i)(?:m3o).{0,40}\\b([0-9A-Za-z]{48})\\b"
+		},
+		{
+			"name": "Github_old",
+			"regex": "(?i)(?:github)[^\\.].{0,40}[ =:'\"]+([a-f0-9]{40})\\b"
+		},
+		{
+			"name": "Surveysparrow",
+			"regex": "(?i)(?:surveysparrow).{0,40}\\b([a-zA-Z0-9-_]{88})\\b"
+		},
+		{
+			"name": "Streak",
+			"regex": "(?i)(?:streak).{0,40}\\b([0-9Aa-f]{32})\\b"
+		},
+		{
+			"name": "Shutterstockoauth",
+			"regex": "(?i)(?:shutterstock).{0,40}\\b(v2/[0-9A-Za-z]{388})\\b"
+		},
+		{
+			"name": "Unifyid",
+			"regex": "(?i)(?:unify).{0,40}\\b([0-9A-Za-z_=-]{44})"
+		},
+		{
+			"name": "Omnisend",
+			"regex": "(?i)(?:omnisend).{0,40}\\b([a-z0-9A-Z-]{75})\\b"
+		},
+		{
+			"name": "Shipday",
+			"regex": "(?i)(?:shipday).{0,40}\\b([a-zA-Z0-9.]{11}[a-zA-Z0-9]{20})\\b"
+		},
+		{
+			"name": "Monday",
+			"regex": "(?i)(?:monday).{0,40}\\b(ey[a-zA-Z0-9_.]{210,225})\\b"
+		},
+		{
+			"name": "Mrticktock - 1",
+			"regex": "(?i)(?:mrticktock).{0,40}\\b([a-zA-Z0-9!=@#$%()_^]{1,50})"
+		},
+		{
+			"name": "Mrticktock - 2",
+			"regex": "\\b([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-z]+)\\b"
+		},
+		{
+			"name": "Browshot",
+			"regex": "(?i)(?:browshot).{0,40}\\b([a-zA-Z-0-9]{28})\\b"
+		},
+		{
+			"name": "Avazapersonalaccesstoken",
+			"regex": "(?i)(?:avaza).{0,40}\\b([0-9]+-[0-9a-f]{40})\\b"
+		},
+		{
+			"name": "Salesblink",
+			"regex": "(?i)(?:salesblink).{0,40}\\b([a-zA-Z]{16})\\b"
+		},
+		{
+			"name": "Guardianapi",
+			"regex": "\\b([0-9Aa-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+		},
+		{
+			"name": "Fakejson",
+			"regex": "(?i)(?:fakejson).{0,40}\\b([a-zA-Z0-9]{22})\\b"
+		},
+		{
+			"name": "Invoiceocean - 1",
+			"regex": "(?i)(?:invoiceocean).{0,40}\\b([0-9A-Za-z]{20})\\b"
+		},
+		{
+			"name": "Invoiceocean - 2",
+			"regex": "\\b([0-9a-z]{1,}.invoiceocean.com)\\b"
+		},
+		{
+			"name": "Ipapi",
+			"regex": "(?i)(?:ipapi).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Swiftype",
+			"regex": "(?i)(?:swiftype).{0,40}\\b([a-zA-z-0-9]{6}\\_[a-zA-z-0-9]{6}\\-[a-zA-z-0-9]{6})\\b"
+		},
+		{
+			"name": "Rocketreach",
+			"regex": "(?i)(?:rocketreach).{0,40}\\b([a-z0-9-]{39})\\b"
+		},
+		{
+			"name": "Cloverly",
+			"regex": "(?i)(?:cloverly).{0,40}\\b([a-z0-9:_]{28})\\b"
+		},
+		{
+			"name": "Shotstack",
+			"regex": "(?i)(?:shotstack).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+		},
+		{
+			"name": "Pdflayer",
+			"regex": "(?i)(?:pdflayer).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Segmentapikey",
+			"regex": "(?i)(?:segment).{0,40}\\b([A-Za-z0-9_\\-a-zA-Z]{43}\\.[A-Za-z0-9_\\-a-zA-Z]{43})\\b"
+		},
+		{
+			"name": "Sendbird - 1",
+			"regex": "(?i)(?:sendbird).{0,40}\\b([0-9a-f]{40})\\b"
+		},
+		{
+			"name": "Sendbird - 2",
+			"regex": "(?i)(?:sendbird).{0,40}\\b([0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12})\\b"
+		},
+		{
+			"name": "Sparkpost",
+			"regex": "\\b([a-zA-Z0-9]{40})\\b"
+		},
+		{
+			"name": "Openweather",
+			"regex": "(?i)(?:openweather).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Pepipost",
+			"regex": "(?i)(?:pepipost|netcore).{0,40}\\b([a-zA-Z-0-9]{32})\\b"
+		},
+		{
+			"name": "Campayn",
+			"regex": "(?i)(?:campayn).{0,40}\\b([a-z0-9]{64})\\b"
+		},
+		{
+			"name": "Scrapestack",
+			"regex": "(?i)(?:scrapestack).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Youtubeapikey - 1",
+			"regex": "(?i)(?:youtube).{0,40}\\b([a-zA-Z-0-9_]{39})\\b"
+		},
+		{
+			"name": "Youtubeapikey - 2",
+			"regex": "(?i)(?:youtube).{0,40}\\b([a-zA-Z-0-9]{24})\\b"
+		},
+		{
+			"name": "Languagelayer",
+			"regex": "(?i)(?:languagelayer).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Razorpay - 1",
+			"regex": "(?i)\\brzp_\\w{2,6}_\\w{10,20}\\b"
+		},
+		{
+			"name": "Razorpay - 2",
+			"regex": "(?:razor|secret|rzp|key)[-\\w]*[\\\" :=']*([A-Za-z0-9]{20,50})"
+		},
+		{
+			"name": "Getgist",
+			"regex": "(?i)(?:getgist).{0,40}\\b([a-z0-9A-Z+=]{68})"
+		},
+		{
+			"name": "Cloudelements - 1",
+			"regex": "(?i)(?:cloudelements).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Cloudelements - 2",
+			"regex": "(?i)(?:cloudelements).{0,40}\\b([a-zA-Z0-9]{43})\\b"
+		},
+		{
+			"name": "Vpnapi",
+			"regex": "(?i)(?:vpnapi).{0,40}\\b([a-z0-9A-Z]{32})\\b"
+		},
+		{
+			"name": "Lastfm",
+			"regex": "(?i)(?:lastfm).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Zeplin",
+			"regex": "(?i)(?:zeplin).{0,40}\\b([a-zA-Z0-9-.]{350,400})\\b"
+		},
+		{
+			"name": "Chatbot",
+			"regex": "(?i)(?:chatbot).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+		},
+		{
+			"name": "Spotifykey - 1",
+			"regex": "(?i)(?:key|secret).{0,40}\\b([A-Za-z0-9]{32})\\b"
+		},
+		{
+			"name": "Spotifykey - 2",
+			"regex": "(?i)(?:id).{0,40}\\b([A-Za-z0-9]{32})\\b"
+		},
+		{
+			"name": "Nitro",
+			"regex": "(?i)(?:nitro).{0,40}\\b([0-9a-f]{32})\\b"
+		},
+		{
+			"name": "Hunter",
+			"regex": "(?i)(?:hunter).{0,40}\\b([a-z0-9_-]{40})\\b"
+		},
+		{
+			"name": "Clicksendsms - 1",
+			"regex": "\\b([A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12})\\b"
+		},
+		{
+			"name": "Clicksendsms - 2",
+			"regex": "(?i)(?:sms).{0,40}\\b([a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,12}.[a-zA-Z0-9]{2,5})\\b"
+		},
+		{
+			"name": "Gitlabv2",
+			"regex": "\\b(glpat-[a-zA-Z0-9\\-=_]{20,22})\\b"
+		},
+		{
+			"name": "Currencylayer",
+			"regex": "(?i)(?:currencylayer).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Goodday",
+			"regex": "(?i)(?:goodday).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Positionstack",
+			"regex": "(?i)(?:positionstack).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+		},
+		{
+			"name": "Flightstats - 1",
+			"regex": "(?i)(?:flightstats).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Flightstats - 2",
+			"regex": "(?i)(?:flightstats).{0,40}\\b([0-9a-z]{8})\\b"
+		},
+		{
+			"name": "Vouchery - 1",
+			"regex": "(?i)(?:vouchery).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Vouchery - 2",
+			"regex": "(?i)(?:vouchery).{0,40}\\b([a-zA-Z0-9-\\S]{2,20})\\b"
+		},
+		{
+			"name": "Swell - 1",
+			"regex": "(?i)(?:swell).{0,40}\\b([a-zA-Z0-9]{6,24})\\b"
+		},
+		{
+			"name": "Swell - 2",
+			"regex": "(?i)(?:swell).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Rev - 1",
+			"regex": "(?i)(?:rev).{0,40}\\b([0-9a-zA-Z\\/\\+]{27}\\=[ \\r\\n]{1})"
+		},
+		{
+			"name": "Rev - 2",
+			"regex": "(?i)(?:rev).{0,40}\\b([0-9a-zA-Z\\-]{27}[ \\r\\n]{1})"
+		},
+		{
+			"name": "Storecove",
+			"regex": "(?i)(?:storecove).{0,40}\\b([a-zA-Z0-9_-]{43})\\b"
+		},
+		{
+			"name": "Serpstack",
+			"regex": "(?i)(?:serpstack).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Theoddsapi",
+			"regex": "(?i)(?:theoddsapi|the-odds-api).{0,40}\\b([0-9a-f]{32})\\b"
+		},
+		{
+			"name": "Shutterstock - 1",
+			"regex": "(?i)(?:shutterstock).{0,40}\\b([0-9a-zA-Z]{32})\\b"
+		},
+		{
+			"name": "Shutterstock - 2",
+			"regex": "(?i)(?:shutterstock).{0,40}\\b([0-9a-zA-Z]{16})\\b"
+		},
+		{
+			"name": "Telnyx",
+			"regex": "(?i)(?:telnyx).{0,40}\\b(KEY[0-9A-Za-z_-]{55})\\b"
+		},
+		{
+			"name": "Circleci",
+			"regex": "(?i)(?:circle).{0,40}([a-fA-F0-9]{40})"
+		},
+		{
+			"name": "Signupgenius",
+			"regex": "(?i)(?:signupgenius).{0,40}\\b([0-9A-Za-z]{32})\\b"
+		},
+		{
+			"name": "D7network",
+			"regex": "(?i)(?:d7network).{0,40}\\b([a-zA-Z0-9\\W\\S]{23}\\=)"
+		},
+		{
+			"name": "Notion",
+			"regex": "\\b(secret_[A-Za-z0-9]{43})\\b"
+		},
+		{
+			"name": "Surveyanyplace - 1",
+			"regex": "(?i)(?:survey).{0,40}\\b([a-z0-9A-Z-]{36})\\b"
+		},
+		{
+			"name": "Surveyanyplace - 2",
+			"regex": "(?i)(?:survey).{0,40}\\b([a-z0-9A-Z]{32})\\b"
+		},
+		{
+			"name": "Hiveage",
+			"regex": "(?i)(?:hiveage).{0,40}\\b([0-9A-Za-z\\_\\-]{20})\\b"
+		},
+		{
+			"name": "Upcdatabase",
+			"regex": "(?i)(?:upcdatabase).{0,40}\\b([A-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Currencyfreaks",
+			"regex": "(?i)(?:currencyfreaks).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Onelogin - 1",
+			"regex": "(?i)id[a-zA-Z0-9_' \"=]{0,20}([a-z0-9]{64})"
+		},
+		{
+			"name": "Onelogin - 2",
+			"regex": "(?i)secret[a-zA-Z0-9_' \"=]{0,20}([a-z0-9]{64})"
+		},
+		{
+			"name": "Typeform",
+			"regex": "(?i)(?:typeform).{0,40}\\b([0-9A-Za-z]{44})\\b"
+		},
+		{
+			"name": "Urlscan",
+			"regex": "(?i)(?:urlscan).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Partnerstack",
+			"regex": "(?i)(?:partnerstack).{0,40}\\b([0-9A-Za-z]{64})\\b"
+		},
+		{
+			"name": "Revampcrm - 1",
+			"regex": "(?i)(?:revamp).{0,40}\\b([a-zA-Z0-9]{40}\\b)"
+		},
+		{
+			"name": "Revampcrm - 2",
+			"regex": "(?i)(?:revamp).{0,40}\\b([a-zA-Z0-9.-@]{25,30})\\b"
+		},
+		{
+			"name": "Airvisual",
+			"regex": "(?i)(?:airvisual).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Nicereply",
+			"regex": "(?i)(?:nicereply).{0,40}\\b([0-9a-f]{40})\\b"
+		},
+		{
+			"name": "Ipgeolocation",
+			"regex": "(?i)(?:ipgeolocation).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Moderation",
+			"regex": "(?i)(?:moderation).{0,40}\\b([a-zA-Z0-9]{36}\\.[a-zA-Z0-9]{115}\\.[a-zA-Z0-9_]{43})\\b"
+		},
+		{
+			"name": "Apptivo - 1",
+			"regex": "(?i)(?:apptivo).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Apptivo - 2",
+			"regex": "(?i)(?:apptivo).{0,40}\\b([a-zA-Z0-9-]{32})\\b"
+		},
+		{
+			"name": "Moosend",
+			"regex": "(?i)(?:moosend).{0,40}\\b([0-9Aa-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+		},
+		{
+			"name": "Axonaut",
+			"regex": "(?i)(?:axonaut).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Calendarific",
+			"regex": "(?i)(?:calendarific).{0,40}\\b([a-z0-9]{40})\\b"
+		},
+		{
+			"name": "Confluent - 1",
+			"regex": "(?i)(?:confluent).{0,40}\\b([a-zA-Z-0-9]{16})\\b"
+		},
+		{
+			"name": "Confluent - 2",
+			"regex": "(?i)(?:confluent).{0,40}\\b([a-zA-Z-0-9]{64})\\b"
+		},
+		{
+			"name": "Mailjetsms",
+			"regex": "(?i)(?:mailjet).{0,40}\\b([A-Za-z0-9]{32})\\b"
+		},
+		{
+			"name": "Jumpcloud",
+			"regex": "(?i)(?:jumpcloud).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+		},
+		{
+			"name": "Airtableapikey",
+			"regex": "\\b(key[a-zA-Z0-9_-]{14})\\b"
+		},
+		{
+			"name": "Adzuna - 1",
+			"regex": "(?i)(?:adzuna).{0,40}\\b([a-z0-9]{8})\\b"
+		},
+		{
+			"name": "Adzuna - 2",
+			"regex": "(?i)(?:adzuna).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Okta - 1",
+			"regex": "[a-z0-9-]{1,40}\\.okta(?:preview|-emea){0,1}\\.com"
+		},
+		{
+			"name": "Okta - 2",
+			"regex": "00[a-zA-Z0-9_-]{40}"
+		},
+		{
+			"name": "Numverify",
+			"regex": "(?i)(?:numverify).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Yousign",
+			"regex": "(?i)(?:yousign).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Sugester - 1",
+			"regex": "(?i)(?:sugester).{0,40}\\b([a-zA-Z0-9_.!+$#^*%]{3,32})\\b"
+		},
+		{
+			"name": "Sugester - 2",
+			"regex": "(?i)(?:sugester).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Tomorrowio",
+			"regex": "(?i)(?:tomorrow).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Polygon",
+			"regex": "(?i)(?:polygon).{0,40}\\b([a-z0-9A-Z]{32})\\b"
+		},
+		{
+			"name": "Boostnote",
+			"regex": "(?i)(?:boostnote).{0,40}\\b([0-9a-f]{64})\\b"
+		},
+		{
+			"name": "Companyhub - 1",
+			"regex": "(?i)(?:companyhub).{0,40}\\b([0-9a-zA-Z]{20})\\b"
+		},
+		{
+			"name": "Companyhub - 2",
+			"regex": "(?i)(?:companyhub).{0,40}\\b([a-zA-Z0-9$%^=-]{4,32})\\b"
+		},
+		{
+			"name": "Dropbox",
+			"regex": "\\b(sl\\.[A-Za-z0-9\\-\\_]{130,140})\\b"
+		},
+		{
+			"name": "Pandascore",
+			"regex": "(?i)(?:pandascore).{0,40}([ \\r\\n]{0,1}[0-9A-Za-z\\-\\_]{51}[ \\r\\n]{1})"
+		},
+		{
+			"name": "Chatfule",
+			"regex": "(?i)(?:chatfuel).{0,40}\\b([a-zA-Z0-9]{128})\\b"
+		},
+		{
+			"name": "Paymoapp",
+			"regex": "(?i)(?:paymoapp).{0,40}\\b([a-zA-Z0-9]{44})\\b"
+		},
+		{
+			"name": "Cryptocompare",
+			"regex": "(?i)(?:cryptocompare).{0,40}\\b([a-z-0-9]{64})\\b"
+		},
+		{
+			"name": "Snipcart",
+			"regex": "(?i)(?:snipcart).{0,40}\\b([0-9A-Za-z_]{75})\\b"
+		},
+		{
+			"name": "Fleetbase",
+			"regex": "\\b(flb_live_[0-9a-zA-Z]{20})\\b"
+		},
+		{
+			"name": "Ditto",
+			"regex": "(?i)(?:ditto).{0,40}\\b([a-z0-9]{8}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{12}\\.[a-z0-9]{40})\\b"
+		},
+		{
+			"name": "Text2data",
+			"regex": "(?i)(?:text2data).{0,40}\\b([0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12})\\b"
+		},
+		{
+			"name": "Teamworkspaces",
+			"regex": "(?i)(?:teamwork|teamworkspaces).{0,40}\\b(tkn\\.v1_[0-9A-Za-z]{71}=[ \\r\\n]{1})"
+		},
+		{
+			"name": "Besttime",
+			"regex": "(?i)(?:besttime).{0,40}\\b([0-9A-Za-z_]{36})\\b"
+		},
+		{
+			"name": "Dronahq",
+			"regex": "(?i)(?:dronahq).{0,40}\\b([a-z0-9]{50})\\b"
+		},
+		{
+			"name": "Intercom",
+			"regex": "\\b([a-zA-Z0-9\\W\\S]{59}\\=)"
+		},
+		{
+			"name": "Kanban - 1",
+			"regex": "(?i)(?:kanban).{0,40}\\b([0-9A-Z]{12})\\b"
+		},
+		{
+			"name": "Kanban - 2",
+			"regex": "\\b([0-9a-z]{1,}.kanbantool.com)\\b"
+		},
+		{
+			"name": "Scrapingbee",
+			"regex": "(?i)(?:scrapingbee).{0,40}\\b([A-Z0-9]{80})\\b"
+		},
+		{
+			"name": "Fxmarket",
+			"regex": "(?i)(?:fxmarket).{0,40}\\b([0-9Aa-zA-Z-_=]{20})\\b"
+		},
+		{
+			"name": "Virustotal",
+			"regex": "(?i)(?:virustotal).{0,40}\\b([a-f0-9]{64})\\b"
+		},
+		{
+			"name": "Finage",
+			"regex": "\\b(API_KEY[0-9A-Z]{32})\\b"
+		},
+		{
+			"name": "Uplead",
+			"regex": "(?i)(?:uplead).{0,40}\\b([a-z0-9-]{32})\\b"
+		},
+		{
+			"name": "Imagekit",
+			"regex": "(?i)(?:imagekit).{0,40}\\b([a-zA-Z0-9_=]{36})"
+		},
+		{
+			"name": "Thinkific - 1",
+			"regex": "(?i)(?:thinkific).{0,40}\\b([0-9a-f]{32})\\b"
+		},
+		{
+			"name": "Thinkific - 2",
+			"regex": "(?i)(?:thinkific).{0,40}\\b([0-9A-Za-z]{4,40})\\b"
+		},
+		{
+			"name": "Enigma",
+			"regex": "(?i)(?:enigma).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+		},
+		{
+			"name": "Pdfshift",
+			"regex": "(?i)(?:pdfshift).{0,40}\\b([0-9a-f]{32})\\b"
+		},
+		{
+			"name": "Salesflare",
+			"regex": "(?i)(?:salesflare).{0,40}\\b([a-zA-Z0-9_]{45})\\b"
+		},
+		{
+			"name": "Bulbul",
+			"regex": "(?i)(?:bulbul).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Messagebird",
+			"regex": "(?i)(?:messagebird).{0,40}\\b([A-Za-z0-9_-]{25})\\b"
+		},
+		{
+			"name": "Nethunt - 1",
+			"regex": "(?i)(?:nethunt).{0,40}\\b([a-zA-Z0-9.-@]{25,30})\\b"
+		},
+		{
+			"name": "Nethunt - 2",
+			"regex": "(?i)(?:nethunt).{0,40}\\b([a-z0-9-\\S]{36})\\b"
+		},
+		{
+			"name": "Autodesk - 1",
+			"regex": "(?i)(?:autodesk).{0,40}\\b([0-9A-Za-z]{32})\\b"
+		},
+		{
+			"name": "Autodesk - 2",
+			"regex": "(?i)(?:autodesk).{0,40}\\b([0-9A-Za-z]{16})\\b"
+		},
+		{
+			"name": "Apideck - 1",
+			"regex": "\\b(sk_live_[a-z0-9A-Z-]{93})\\b"
+		},
+		{
+			"name": "Apideck - 2",
+			"regex": "(?i)(?:apideck).{0,40}\\b([a-z0-9A-Z]{40})\\b"
+		},
+		{
+			"name": "Helpscout",
+			"regex": "(?i)(?:helpscout).{0,40}\\b([A-Za-z0-9]{56})\\b"
+		},
+		{
+			"name": "Apify",
+			"regex": "\\b(apify\\_api\\_[a-zA-Z-0-9]{36})\\b"
+		},
+		{
+			"name": "Baseapiio",
+			"regex": "(?i)(?:baseapi|base-api).{0,40}\\b([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+		},
+		{
+			"name": "Pastebin",
+			"regex": "(?i)(?:pastebin).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+		},
+		{
+			"name": "Juro",
+			"regex": "(?i)(?:juro).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+		},
+		{
+			"name": "Borgbase",
+			"regex": "(?i)(?:borgbase).{0,40}\\b([a-zA-Z0-9/_.-]{148,152})\\b"
+		},
+		{
+			"name": "Algoliaadminkey - 1",
+			"regex": "(?i)(?:algolia).{0,40}\\b([A-Z0-9]{10})\\b"
+		},
+		{
+			"name": "Algoliaadminkey - 2",
+			"regex": "(?i)(?:algolia).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Marketstack",
+			"regex": "(?i)(?:marketstack).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Fileio",
+			"regex": "(?i)(?:fileio).{0,40}\\b([A-Z0-9.-]{39})\\b"
+		},
+		{
+			"name": "Exchangeratesapi",
+			"regex": "(?i)(?:exchangerates).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Gengo",
+			"regex": "(?i)(?:gengo).{0,40}([ ]{0,1}[0-9a-zA-Z\\[\\]\\-\\(\\)\\{\\}|_^@$=~]{64}[ \\r\\n]{1})"
+		},
+		{
+			"name": "Pushbulletapikey",
+			"regex": "(?i)(?:pushbullet).{0,40}\\b([A-Za-z0-9_\\.]{34})\\b"
+		},
+		{
+			"name": "Linearapi",
+			"regex": "\\b(lin_api_[0-9A-Za-z]{40})\\b"
+		},
+		{
+			"name": "Jotform",
+			"regex": "(?i)(?:jotform).{0,40}\\b([0-9Aa-z]{32})\\b"
+		},
+		{
+			"name": "Proxycrawl",
+			"regex": "(?i)(?:proxycrawl).{0,40}\\b([a-zA-Z0-9_]{22})\\b"
+		},
+		{
+			"name": "Coinlib",
+			"regex": "(?i)(?:coinlib).{0,40}\\b([a-z0-9]{16})\\b"
+		},
+		{
+			"name": "Restpackhtmltopdfapi",
+			"regex": "(?i)(?:restpack).{0,40}\\b([0-9A-Za-z]{48})\\b"
+		},
+		{
+			"name": "Mailmodo",
+			"regex": "(?i)(?:mailmodo).{0,40}\\b([A-Z0-9]{7}-[A-Z0-9]{7}-[A-Z0-9]{7}-[A-Z0-9]{7})\\b"
+		},
+		{
+			"name": "Midise",
+			"regex": "midi-662b69edd2[a-zA-Z0-9]{54}"
+		},
+		{
+			"name": "Loyverse",
+			"regex": "(?i)(?:loyverse).{0,40}\\b([0-9-a-z]{32})\\b"
+		},
+		{
+			"name": "Purestake",
+			"regex": "(?i)(?:purestake).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+		},
+		{
+			"name": "Financialmodelingprep",
+			"regex": "(?i)(?:financialmodelingprep).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Capsulecrm",
+			"regex": "(?i)(?:capsulecrm).{0,40}\\b([a-zA-Z0-9-._+=]{64})\\b"
+		},
+		{
+			"name": "Roninapp - 1",
+			"regex": "(?i)(?:ronin).{0,40}\\b([0-9Aa-zA-Z]{3,32})\\b"
+		},
+		{
+			"name": "Roninapp - 2",
+			"regex": "(?i)(?:ronin).{0,40}\\b([0-9a-zA-Z]{26})\\b"
+		},
+		{
+			"name": "Metrilo",
+			"regex": "(?i)(?:metrilo).{0,40}\\b([a-z0-9]{16})\\b"
+		},
+		{
+			"name": "Myfreshworks - 1",
+			"regex": "(?i)(?:freshworks).{0,40}\\b([a-zA-Z0-9-_]{2,20})\\b"
+		},
+		{
+			"name": "Myfreshworks - 2",
+			"regex": "(?i)(?:freshworks).{0,40}\\b([a-z0-9A-Z-]{22})\\b"
+		},
+		{
+			"name": "Dfuse",
+			"regex": "\\b(web\\_[0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Hubspotapikey",
+			"regex": "(?i)(?:hubspot).{0,40}\\b([A-Za-z0-9]{8}\\-[A-Za-z0-9]{4}\\-[A-Za-z0-9]{4}\\-[A-Za-z0-9]{4}\\-[A-Za-z0-9]{12})\\b"
+		},
+		{
+			"name": "Simplynoted",
+			"regex": "(?i)(?:simplynoted).{0,40}\\b([a-zA-Z0-9\\S]{340,360})\\b"
+		},
+		{
+			"name": "Kylas",
+			"regex": "(?i)(?:kylas).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Sendgrid 2",
+			"regex": "(?i)(?:sendgrid).{0,40}(SG\\.[\\w\\-_]{20,24}\\.[\\w\\-_]{39,50})\\b"
+		},
+		{
+			"name": "Commodities",
+			"regex": "(?i)(?:commodities).{0,40}\\b([a-zA-Z0-9]{60})\\b"
+		},
+		{
+			"name": "Onedesk - 1",
+			"regex": "(?i)(?:onedesk).{0,40}\\b([a-zA-Z0-9!=@#$%^]{8,64})"
+		},
+		{
+			"name": "Squareapp - 1",
+			"regex": "[\\w\\-]*sq0i[a-z]{2}-[0-9A-Za-z\\-_]{22,43}"
+		},
+		{
+			"name": "Squareapp - 2",
+			"regex": "[\\w\\-]*sq0c[a-z]{2}-[0-9A-Za-z\\-_]{40,50}"
+		},
+		{
+			"name": "Nasdaqdatalink",
+			"regex": "(?i)(?:nasdaq).{0,40}\\b([a-zA-Z0-9_-]{20})\\b"
+		},
+		{
+			"name": "Thousandeyes - 1",
+			"regex": "(?i)(?:thousandeyes).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Thousandeyes - 2",
+			"regex": "(?i)(?:thousandeyes).{0,40}\\b([a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,12}.[a-zA-Z0-9]{2,5})\\b"
+		},
+		{
+			"name": "Plaidkey - 1",
+			"regex": "(?i)(?:plaid).{0,40}\\b([a-z0-9]{24})\\b"
+		},
+		{
+			"name": "Plaidkey - 2",
+			"regex": "(?i)(?:plaid).{0,40}\\b([a-z0-9]{30})\\b"
+		},
+		{
+			"name": "Weatherstack",
+			"regex": "(?i)(?:weatherstack).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Documo",
+			"regex": "\\b(ey[a-zA-Z0-9]{34}.ey[a-zA-Z0-9]{154}.[a-zA-Z0-9_-]{43})\\b"
+		},
+		{
+			"name": "Getgeoapi",
+			"regex": "(?i)(?:getgeoapi).{0,40}\\b([0-9a-z]{40})\\b"
+		},
+		{
+			"name": "Sendbirdorganizationapi",
+			"regex": "(?i)(?:sendbird).{0,40}\\b([0-9a-f]{24})\\b"
+		},
+		{
+			"name": "Moonclerk",
+			"regex": "(?i)(?:moonclerk).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Fmfw - 1",
+			"regex": "(?i)(?:fmfw).{0,40}\\b([a-zA-Z0-9-]{32})\\b"
+		},
+		{
+			"name": "Fmfw - 2",
+			"regex": "(?i)(?:fmfw).{0,40}\\b([a-zA-Z0-9_-]{32})\\b"
+		},
+		{
+			"name": "Blablabus",
+			"regex": "(?i)(?:blablabus).{0,40}\\b([0-9A-Za-z]{22})\\b"
+		},
+		{
+			"name": "Pagerdutyapikey",
+			"regex": "(?i)(?:pagerduty).{0,40}\\b([a-z]{1}\\+[a-zA-Z]{9}\\-[a-z]{2}\\-[a-z0-9]{5})\\b"
+		},
+		{
+			"name": "Toggltrack",
+			"regex": "(?i)(?:toggl).{0,40}\\b([0-9Aa-z]{32})\\b"
+		},
+		{
+			"name": "Jiratoken - 1",
+			"regex": "(?i)(?:jira).{0,40}\\b([a-zA-Z-0-9]{24})\\b"
+		},
+		{
+			"name": "Jiratoken - 2",
+			"regex": "(?i)(?:jira).{0,40}\\b([a-zA-Z-0-9]{5,24}\\@[a-zA-Z-0-9]{3,16}\\.com)\\b"
+		},
+		{
+			"name": "Jiratoken - 3",
+			"regex": "(?i)(?:jira).{0,40}\\b([a-zA-Z-0-9]{5,24}\\.[a-zA-Z-0-9]{3,16}\\.[a-zA-Z-0-9]{3,16})\\b"
+		},
+		{
+			"name": "Scrapfly",
+			"regex": "(?i)(?:scrapfly).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Brandfetch",
+			"regex": "(?i)(?:brandfetch).{0,40}\\b([0-9A-Za-z]{40})\\b"
+		},
+		{
+			"name": "Shodankey",
+			"regex": "(?i)(?:shodan).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Uri",
+			"regex": "\\b[a-zA-Z]{1,10}:?\\/\\/[-.%\\w{}]{1,50}:([-.%\\S]{3,50})@[-.%\\w\\/:]+\\b"
+		},
+		{
+			"name": "Meistertask",
+			"regex": "(?i)(?:meistertask).{0,40}\\b([a-zA-Z0-9]{43})\\b"
+		},
+		{
+			"name": "Workstack",
+			"regex": "(?i)(?:workstack).{0,40}\\b([0-9Aa-zA-Z]{60})\\b"
+		},
+		{
+			"name": "Nexmoapikey - 1",
+			"regex": "(?i)(?:nexmo).{0,40}\\b([A-Za-z0-9_-]{8})\\b"
+		},
+		{
+			"name": "Nexmoapikey - 2",
+			"regex": "(?i)(?:nexmo).{0,40}\\b([A-Za-z0-9_-]{16})\\b"
+		},
+		{
+			"name": "Roaring",
+			"regex": "(?i)(?:roaring).{0,40}\\b([0-9A-Za-z_-]{28})\\b"
+		},
+		{
+			"name": "Enablex - 1",
+			"regex": "(?i)(?:enablex).{0,40}\\b([a-zA-Z0-9]{36})\\b"
+		},
+		{
+			"name": "Enablex - 2",
+			"regex": "(?i)(?:enablex).{0,40}\\b([a-z0-9]{24})\\b"
+		},
+		{
+			"name": "Coinlayer",
+			"regex": "(?i)(?:coinlayer).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Appsynergy",
+			"regex": "(?i)(?:appsynergy).{0,40}\\b([a-z0-9]{64})\\b"
+		},
+		{
+			"name": "Ipify",
+			"regex": "(?i)(?:ipify).{0,40}\\b([a-zA-Z0-9_-]{32})\\b"
+		},
+		{
+			"name": "Convertkit",
+			"regex": "(?i)(?:convertkit).{0,40}\\b([a-z0-9A-Z_]{22})\\b"
+		},
+		{
+			"name": "Zerobounce",
+			"regex": "(?i)(?:zerobounce).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Lokalisetoken",
+			"regex": "(?i)(?:lokalise).{0,40}\\b([a-z0-9]{40})\\b"
+		},
+		{
+			"name": "Dailyco",
+			"regex": "(?i)(?:daily).{0,40}\\b([0-9a-f]{64})\\b"
+		},
+		{
+			"name": "Doppler",
+			"regex": "\\b(dp\\.pt\\.[a-zA-Z0-9]{43})\\b"
+		},
+		{
+			"name": "Microsoftteamswebhook",
+			"regex": "(https:\\/\\/[a-zA-Z-0-9]+\\.webhook\\.office\\.com\\/webhookb2\\/[a-zA-Z-0-9]{8}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{12}\\@[a-zA-Z-0-9]{8}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{12}\\/IncomingWebhook\\/[a-zA-Z-0-9]{32}\\/[a-zA-Z-0-9]{8}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{12})"
+		},
+		{
+			"name": "Diffbot",
+			"regex": "(?i)(?:diffbot).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Integromat",
+			"regex": "(?i)(?:integromat).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Assemblyai",
+			"regex": "(?i)(?:assemblyai).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Verifier - 1",
+			"regex": "(?i)(?:verifier).{0,40}\\b([a-zA-Z-0-9-]{5,16}\\@[a-zA-Z-0-9]{4,16}\\.[a-zA-Z-0-9]{3,6})\\b"
+		},
+		{
+			"name": "Verifier - 2",
+			"regex": "(?i)(?:verifier).{0,40}\\b([a-z0-9]{96})\\b"
+		},
+		{
+			"name": "Moonclerck",
+			"regex": "(?i)(?:moonclerck).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Geocodify",
+			"regex": "(?i)(?:geocodify).{0,40}\\b([0-9a-z]{40})\\b"
+		},
+		{
+			"name": "Vatlayer",
+			"regex": "(?i)(?:vatlayer).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Sigopt",
+			"regex": "(?i)(?:sigopt).{0,40}\\b([A-Z0-9]{48})\\b"
+		},
+		{
+			"name": "Dandelion",
+			"regex": "(?i)(?:dandelion).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Airbrakeprojectkey - 1",
+			"regex": "(?i)(?:airbrake).{0,40}\\b([0-9]{6})\\b"
+		},
+		{
+			"name": "Airbrakeprojectkey - 2",
+			"regex": "(?i)(?:airbrake).{0,40}\\b([a-zA-Z-0-9]{32})\\b"
+		},
+		{
+			"name": "Formbucket",
+			"regex": "(?i)(?:formbucket).{0,40}\\b([0-9A-Za-z]{1,}.[0-9A-Za-z]{1,}\\.[0-9A-Z-a-z\\-_]{1,})"
+		},
+		{
+			"name": "Macaddress",
+			"regex": "(?i)(?:macaddress).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+		},
+		{
+			"name": "Userstack",
+			"regex": "(?i)(?:userstack).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Helpcrunch",
+			"regex": "(?i)(?:helpcrunch).{0,40}\\b([a-zA-Z-0-9+/=]{328})"
+		},
+		{
+			"name": "Telegrambottoken",
+			"regex": "(?i)(?:telegram).{0,40}\\b([0-9]{8,10}:[a-zA-Z0-9_-]{35})\\b"
+		},
+		{
+			"name": "Skrappio",
+			"regex": "(?i)(?:skrapp).{0,40}\\b([a-z0-9A-Z]{42})\\b"
+		},
+		{
+			"name": "Autopilot",
+			"regex": "(?i)(?:autopilot).{0,40}\\b([0-9a-f]{32})\\b"
+		},
+		{
+			"name": "Foursquare",
+			"regex": "(?i)(?:foursquare).{0,40}\\b([0-9A-Z]{48})\\b"
+		},
+		{
+			"name": "Mailboxlayer",
+			"regex": "(?i)(?:mailboxlayer).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Planyo",
+			"regex": "(?i)(?:planyo).{0,40}\\b([0-9a-z]{62})\\b"
+		},
+		{
+			"name": "Gcp",
+			"regex": "\\{[^{]+auth_provider_x509_cert_url[^}]+\\}"
+		},
+		{
+			"name": "Aylien - 1",
+			"regex": "(?i)(?:aylien).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Aylien - 2",
+			"regex": "(?i)(?:aylien).{0,40}\\b([a-z0-9]{8})\\b"
+		},
+		{
+			"name": "Smooch - 1",
+			"regex": "(?i)(?:smooch).{0,40}\\b(act_[0-9a-z]{24})\\b"
+		},
+		{
+			"name": "Smooch - 2",
+			"regex": "(?i)(?:smooch).{0,40}\\b([0-9a-zA-Z_-]{86})\\b"
+		},
+		{
+			"name": "Viewneo",
+			"regex": "(?i)(?:viewneo).{0,40}\\b([a-z0-9A-Z]{120,300}.[a-z0-9A-Z]{150,300}.[a-z0-9A-Z-_]{600,800})"
+		},
+		{
+			"name": "Teamgate - 1",
+			"regex": "(?i)(?:teamgate).{0,40}\\b([a-z0-9]{40})\\b"
+		},
+		{
+			"name": "Teamgate - 2",
+			"regex": "(?i)(?:teamgate).{0,40}\\b([a-zA-Z0-9]{80})\\b"
+		},
+		{
+			"name": "Bitcoinaverage",
+			"regex": "(?i)(?:bitcoinaverage).{0,40}\\b([a-zA-Z0-9]{43})\\b"
+		},
+		{
+			"name": "Host",
+			"regex": "(?i)(?:host).{0,40}\\b([a-z0-9]{14})\\b"
+		},
+		{
+			"name": "Etsyapikey",
+			"regex": "(?i)(?:etsy).{0,40}\\b([a-zA-Z-0-9]{24})\\b"
+		},
+		{
+			"name": "Square",
+			"regex": "(?i)(?:square).{0,40}(EAAA[a-zA-Z0-9\\-\\+\\=]{60})"
+		},
+		{
+			"name": "Nftport",
+			"regex": "(?i)(?:nftport).{0,40}\\b([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})\\b"
+		},
+		{
+			"name": "Beebole",
+			"regex": "(?i)(?:beebole).{0,40}\\b([0-9a-z]{40})\\b"
+		},
+		{
+			"name": "Nozbeteams",
+			"regex": "(?i)(?:nozbe|nozbeteams).{0,40}\\b([0-9A-Za-z]{16}_[0-9A-Za-z\\-_]{64}[ \\r\\n]{1})"
+		},
+		{
+			"name": "Mindmeister",
+			"regex": "(?i)(?:mindmeister).{0,40}\\b([a-zA-Z0-9]{43})\\b"
+		},
+		{
+			"name": "Simplesat",
+			"regex": "(?i)(?:simplesat).{0,40}\\b([a-z0-9]{40})"
+		},
+		{
+			"name": "Vultrapikey",
+			"regex": "(?i)(?:vultr).{0,40} \\b([A-Z0-9]{36})\\b"
+		},
+		{
+			"name": "Nimble",
+			"regex": "(?i)(?:nimble).{0,40}\\b([a-zA-Z0-9]{30})\\b"
+		},
+		{
+			"name": "Dovico",
+			"regex": "(?i)(?:dovico).{0,40}\\b([0-9a-z]{32}\\.[0-9a-z]{1,}\\b)"
+		},
+		{
+			"name": "Iconfinder",
+			"regex": "(?i)(?:iconfinder).{0,40}\\b([a-zA-Z0-9]{64})\\b"
+		},
+		{
+			"name": "Artsy - 1",
+			"regex": "(?i)(?:artsy).{0,40}\\b([0-9a-zA-Z]{20})\\b"
+		},
+		{
+			"name": "Artsy - 2",
+			"regex": "(?i)(?:artsy).{0,40}\\b([0-9a-zA-Z]{32})\\b"
+		},
+		{
+			"name": "Testdetector",
+			"regex": "\\b(test)\\b"
+		},
+		{
+			"name": "Paralleldots",
+			"regex": "(?i)(?:paralleldots).{0,40}\\b([0-9A-Za-z]{43})\\b"
+		},
+		{
+			"name": "Pivotaltracker",
+			"regex": "(?i)(?:pivotal).{0,40}([a-z0-9]{32})"
+		},
+		{
+			"name": "Mediastack",
+			"regex": "(?i)(?:mediastack).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Imagga",
+			"regex": "(?i)(?:imagga).{0,40}\\b([a-z0-9A-Z=]{72})"
+		},
+		{
+			"name": "Guru - 1",
+			"regex": "(?i)(?:guru).{0,40}\\b([a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,12}.[a-zA-Z0-9]{2,5})\\b"
+		},
+		{
+			"name": "Guru - 2",
+			"regex": "(?i)(?:guru).{0,40}\\b([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})\\b"
+		},
+		{
+			"name": "Shortcut",
+			"regex": "(?i)(?:shortcut).{0,40}\\b([0-9a-f-]{36})\\b"
+		},
+		{
+			"name": "Bitlyaccesstoken",
+			"regex": "(?i)(?:bitly).{0,40}\\b([a-zA-Z-0-9]{40})\\b"
+		},
+		{
+			"name": "Kucoin - 1",
+			"regex": "(?i)(?:kucoin).{0,40}([ \\r\\n]{1}[!-~]{7,32}[ \\r\\n]{1})"
+		},
+		{
+			"name": "Kucoin - 2",
+			"regex": "(?i)(?:kucoin).{0,40}\\b([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+		},
+		{
+			"name": "Kucoin - 3",
+			"regex": "(?i)(?:kucoin).{0,40}\\b([0-9a-f]{24})\\b"
+		},
+		{
+			"name": "Flightapi",
+			"regex": "(?i)(?:flightapi).{0,40}\\b([a-z0-9]{24})\\b"
+		},
+		{
+			"name": "Worksnaps",
+			"regex": "(?i)(?:worksnaps).{0,40}\\b([0-9A-Za-z]{40})\\b"
+		},
+		{
+			"name": "Newsapi",
+			"regex": "(?i)(?:newsapi).{0,40}\\b([a-z0-9]{32})"
+		},
+		{
+			"name": "Zapierwebhook",
+			"regex": "(https:\\/\\/hooks.zapier.com\\/hooks\\/catch\\/[A-Za-z0-9\\/]{16})"
+		},
+		{
+			"name": "Scrapeowl",
+			"regex": "(?i)(?:scrapeowl).{0,40}\\b([0-9a-z]{30})\\b"
+		},
+		{
+			"name": "Paystack",
+			"regex": "\\b(sk\\_[a-z]{1,}\\_[A-Za-z0-9]{40})\\b"
+		},
+		{
+			"name": "Groovehq",
+			"regex": "(?i)(?:groove).{0,40}\\b([a-z0-9A-Z]{64})"
+		},
+		{
+			"name": "Satismeterprojectkey - 1",
+			"regex": "(?i)(?:satismeter).{0,40}\\b([a-zA-Z0-9]{4,20}@[a-zA-Z0-9]{2,12}.[a-zA-Z0-9]{2,12})\\b"
+		},
+		{
+			"name": "Satismeterprojectkey - 2",
+			"regex": "(?i)(?:satismeter).{0,40}\\b([a-zA-Z0-9]{24})\\b"
+		},
+		{
+			"name": "Satismeterprojectkey - 3",
+			"regex": "(?i)(?:satismeter).{0,40}\\b([a-zA-Z0-9!=@#$%^]{6,32})"
+		},
+		{
+			"name": "Zenkitapi",
+			"regex": "(?i)(?:zenkit).{0,40}\\b([0-9a-z]{8}\\-[0-9A-Za-z]{32})\\b"
+		},
+		{
+			"name": "Censys - 1",
+			"regex": "(?i)(?:censys).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Censys - 2",
+			"regex": "(?i)(?:censys).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Discordwebhook",
+			"regex": "(https:\\/\\/discord.com\\/api\\/webhooks\\/[0-9]{18}\\/[0-9a-zA-Z-]{68})"
+		},
+		{
+			"name": "Artifactory - 1",
+			"regex": "\\b([a-zA-Z0-9]{73})"
+		},
+		{
+			"name": "Artifactory - 2",
+			"regex": "\\b([A-Za-z0-9](?:[A-Za-z0-9\\-]{0,61}[A-Za-z0-9])\\.jfrog\\.io)"
+		},
+		{
+			"name": "Raven",
+			"regex": "(?i)(?:raven).{0,40}\\b([A-Z0-9-]{16})\\b"
+		},
+		{
+			"name": "Datafire",
+			"regex": "(?i)(?:datafire).{0,40}\\b([a-z0-9\\S]{175,190})\\b"
+		},
+		{
+			"name": "Webex - 1",
+			"regex": "(?i)(?:error).{0,40}(redirect_uri_mismatch)"
+		},
+		{
+			"name": "Webex - 2",
+			"regex": "(?i)(?:webex).{0,40}\\b([A-Za-z0-9_-]{65})\\b"
+		},
+		{
+			"name": "Webex - 3",
+			"regex": "(?i)(?:webex).{0,40}\\b([A-Za-z0-9_-]{64})\\b"
+		},
+		{
+			"name": "Cloudflarecakey",
+			"regex": "(?i)(?:cloudflare).{0,40}\\b(v[A-Za-z0-9._-]{173,})\\b"
+		},
+		{
+			"name": "Aletheiaapi",
+			"regex": "(?i)(?:aletheiaapi).{0,40}\\b([A-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Clustdoc",
+			"regex": "(?i)(?:clustdoc).{0,40}\\b([0-9a-zA-Z]{60})\\b"
+		},
+		{
+			"name": "Signaturit",
+			"regex": "(?i)(?:signaturit).{0,40}\\b([0-9A-Za-z]{86})\\b"
+		},
+		{
+			"name": "Prospectcrm",
+			"regex": "(?i)(?:prospect).{0,40}\\b([a-z0-9-]{32})\\b"
+		},
+		{
+			"name": "Rownd - 1",
+			"regex": "(?i)(?:rownd).{0,40}\\b([a-z0-9]{8}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{12})\\b"
+		},
+		{
+			"name": "Rownd - 2",
+			"regex": "(?i)(?:rownd).{0,40}\\b([a-z0-9]{48})\\b"
+		},
+		{
+			"name": "Rownd - 3",
+			"regex": "(?i)(?:rownd).{0,40}\\b([0-9]{18})\\b"
+		},
+		{
+			"name": "Slackwebhook",
+			"regex": "(https:\\/\\/hooks.slack.com\\/services\\/[A-Za-z0-9+\\/]{44,46})"
+		},
+		{
+			"name": "Caflou",
+			"regex": "(?i)(?:caflou).{0,40}\\b([a-bA-Z0-9\\S]{155})\\b"
+		},
+		{
+			"name": "Graphhopper",
+			"regex": "(?i)(?:graphhopper).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Sendinbluev2",
+			"regex": "\\b(xkeysib\\-[A-Za-z0-9_-]{81})\\b"
+		},
+		{
+			"name": "Sendinblue API token",
+			"regex": "xkeysib-[a-f0-9]{64}\\-(?i)[a-z0-9]{16}"
+		},
+		{
+			"name": "Kontent",
+			"regex": "(?i)(?:kontent).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Smartsheets",
+			"regex": "(?i)(?:smartsheets).{0,40}\\b([a-zA-Z0-9]{37})\\b"
+		},
+		{
+			"name": "Currentsapi",
+			"regex": "(?i)(?:currentsapi).{0,40}\\b([a-zA-Z0-9\\S]{48})\\b"
+		},
+		{
+			"name": "Tradier",
+			"regex": "(?i)(?:tradier).{0,40}\\b([a-zA-Z0-9]{28})\\b"
+		},
+		{
+			"name": "Webscraper",
+			"regex": "(?i)(?:webscraper).{0,40}\\b([a-zA-Z0-9]{60})\\b"
+		},
+		{
+			"name": "Owlbot",
+			"regex": "(?i)(?:owlbot).{0,40}\\b([a-z0-9]{40})\\b"
+		},
+		{
+			"name": "Fastforex",
+			"regex": "(?i)(?:fastforex).{0,40}\\b([a-z0-9-]{28})\\b"
+		},
+		{
+			"name": "Locationiq",
+			"regex": "\\b(pk\\.[a-zA-Z-0-9]{32})\\b"
+		},
+		{
+			"name": "Accuweather",
+			"regex": "(?i)(?:accuweather).{0,40}([a-z0-9A-Z\\%]{35})\\b"
+		},
+		{
+			"name": "Graphcms - 1",
+			"regex": "(?i)(?:graph).{0,40}\\b([a-z0-9]{25})\\b"
+		},
+		{
+			"name": "Graphcms - 2",
+			"regex": "\\b(ey[a-zA-Z0-9]{73}.ey[a-zA-Z0-9]{365}.[a-zA-Z0-9_-]{683})\\b"
+		},
+		{
+			"name": "Webflow",
+			"regex": "(?i)(?:webflow).{0,40}\\b([a-zA0-9]{64})\\b"
+		},
+		{
+			"name": "Carboninterface",
+			"regex": "(?i)(?:carboninterface).{0,40}\\b([a-zA-Z0-9]{21})\\b"
+		},
+		{
+			"name": "Rapidapi",
+			"regex": "(?i)(?:rapidapi).{0,40}\\b([A-Za-z0-9_-]{50})\\b"
+		},
+		{
+			"name": "Exchangerateapi",
+			"regex": "(?i)(?:exchangerate).{0,40}\\b([a-z0-9]{24})\\b"
+		},
+		{
+			"name": "Flowflu - 1",
+			"regex": "(?i)(?:flowflu|account).{0,40}\\b([a-zA-Z0-9]{4,30})\\b"
+		},
+		{
+			"name": "Flowflu - 2",
+			"regex": "(?i)(?:flowflu).{0,40}\\b([a-zA-Z0-9]{51})\\b"
+		},
+		{
+			"name": "Taxjar",
+			"regex": "(?i)(?:taxjar).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Planviewleankit - 1",
+			"regex": "(?i)(?:planviewleankit|planview).{0,40}\\b([0-9a-f]{128})\\b"
+		},
+		{
+			"name": "Planviewleankit - 2",
+			"regex": "(?i)(?:planviewleankit|planview).{0,40}(?:subdomain).\\b([a-zA-Z][a-zA-Z0-9.-]{1,23}[a-zA-Z0-9])\\b"
+		},
+		{
+			"name": "Versioneye",
+			"regex": "(?i)(?:versioneye).{0,40}\\b([a-zA-Z0-9-]{40})\\b"
+		},
+		{
+			"name": "Linenotify",
+			"regex": "(?i)(?:linenotify).{0,40}\\b([0-9A-Za-z]{43})\\b"
+		},
+		{
+			"name": "Digitaloceantoken",
+			"regex": "(?i)(?:digitalocean).{0,40}\\b([A-Za-z0-9_-]{64})\\b"
+		},
+		{
+			"name": "Aviationstack",
+			"regex": "(?i)(?:aviationstack).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Textmagic - 1",
+			"regex": "(?i)(?:textmagic).{0,40}\\b([0-9A-Za-z]{30})\\b"
+		},
+		{
+			"name": "Textmagic - 2",
+			"regex": "(?i)(?:textmagic).{0,40}\\b([0-9A-Za-z]{1,25})\\b"
+		},
+		{
+			"name": "Auth0oauth - 1",
+			"regex": "(?i)(?:auth0).{0,40}\\b([a-zA-Z0-9_-]{32,60})\\b"
+		},
+		{
+			"name": "Auth0oauth - 2",
+			"regex": "\\b([a-zA-Z0-9_-]{64,})\\b"
+		},
+		{
+			"name": "Impala",
+			"regex": "(?i)(?:impala).{0,40}\\b([0-9A-Za-z_]{46})\\b"
+		},
+		{
+			"name": "Mapquest",
+			"regex": "(?i)(?:mapquest).{0,40}\\b([0-9A-Za-z]{32})\\b"
+		},
+		{
+			"name": "Clickhelp - 1",
+			"regex": "\\b([0-9A-Za-z]{3,20}.try.clickhelp.co)\\b"
+		},
+		{
+			"name": "Clickhelp - 2",
+			"regex": "(?i)(?:clickhelp).{0,40}\\b([0-9A-Za-z]{24})\\b"
+		},
+		{
+			"name": "Uploadcare",
+			"regex": "(?i)(?:uploadcare).{0,40}\\b([a-z0-9]{20})\\b"
+		},
+		{
+			"name": "Peopledatalabs",
+			"regex": "(?i)(?:peopledatalabs).{0,40}\\b([a-z0-9]{64})\\b"
+		},
+		{
+			"name": "Mattermostpersonaltoken - 1",
+			"regex": "(?i)(?:mattermost).{0,40}\\b([A-Za-z0-9-_]{1,}.cloud.mattermost.com)\\b"
+		},
+		{
+			"name": "Mattermostpersonaltoken - 2",
+			"regex": "(?i)(?:mattermost).{0,40}\\b([a-z0-9]{26})\\b"
+		},
+		{
+			"name": "Storyblok",
+			"regex": "(?i)(?:storyblok).{0,40}\\b([0-9A-Za-z]{22}t{2})\\b"
+		},
+		{
+			"name": "Ethplorer",
+			"regex": "(?i)(?:ethplorer).{0,40}\\b([a-z0-9A-Z-]{22})\\b"
+		},
+		{
+			"name": "Glassnode",
+			"regex": "(?i)(?:glassnode).{0,40}\\b([0-9A-Za-z]{27})\\b"
+		},
+		{
+			"name": "Insightly",
+			"regex": "(?i)(?:insightly).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Opengraphr",
+			"regex": "(?i)(?:opengraphr).{0,40}\\b([0-9Aa-zA-Z]{80})\\b"
+		},
+		{
+			"name": "Surveybot",
+			"regex": "(?i)(?:surveybot).{0,40}\\b([A-Za-z0-9-]{80})\\b"
+		},
+		{
+			"name": "Neutrinoapi - 1",
+			"regex": "(?i)(?:neutrinoapi).{0,40}\\b([a-zA-Z0-9]{48})\\b"
+		},
+		{
+			"name": "Neutrinoapi - 2",
+			"regex": "(?i)(?:neutrinoapi).{0,40}\\b([a-zA-Z0-9]{6,24})\\b"
+		},
+		{
+			"name": "Selectpdf",
+			"regex": "(?i)(?:selectpdf).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Gocardless",
+			"regex": "\\b(live_[0-9A-Za-z\\_\\-]{40}[ \"'\\r\\n]{1})"
+		},
+		{
+			"name": "Karmacrm",
+			"regex": "(?i)(?:karma).{0,40}\\b([a-zA-Z0-9]{20})\\b"
+		},
+		{
+			"name": "Onwaterio",
+			"regex": "(?i)(?:onwater).{0,40}\\b([a-zA-Z0-9_-]{20})\\b"
+		},
+		{
+			"name": "Cloudimage",
+			"regex": "(?i)(?:cloudimage).{0,40}\\b([a-z0-9_]{30})\\b"
+		},
+		{
+			"name": "Abstract",
+			"regex": "(?i)(?:abstract).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Flutterwave",
+			"regex": "\\b(FLWSECK-[0-9a-z]{32}-X)\\b"
+		},
+		{
+			"name": "Gocanvas - 1",
+			"regex": "(?i)(?:gocanvas).{0,40}\\b([0-9A-Za-z/+]{43}=[ \\r\\n]{1})"
+		},
+		{
+			"name": "Gocanvas - 2",
+			"regex": "(?i)(?:gocanvas).{0,40}\\b([\\w\\.-]+@[\\w-]+\\.[\\w\\.-]{2,5})\\b"
+		},
+		{
+			"name": "Screenshotlayer",
+			"regex": "(?i)(?:screenshotlayer).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+		},
+		{
+			"name": "Paymongo",
+			"regex": "(?i)(?:paymongo).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+		},
+		{
+			"name": "Klipfolio",
+			"regex": "(?i)(?:klipfolio).{0,40}\\b([0-9a-f]{40})\\b"
+		},
+		{
+			"name": "Worldweather",
+			"regex": "(?i)(?:worldweather).{0,40}\\b([0-9a-z]{31})\\b"
+		},
+		{
+			"name": "Netlify",
+			"regex": "(?i)(?:netlify).{0,40}\\b([A-Za-z0-9_-]{43,45})\\b"
+		},
+		{
+			"name": "Netlify Access Token",
+			"regex": "(?i)(?:netlify).{0,40}\\b([A-Za-z0-9_-]{40,46})\\b"
+		},
+		{
+			"name": "Wepay - 1",
+			"regex": "\\b(\\d{6})\\b"
+		},
+		{
+			"name": "Wepay - 2",
+			"regex": "(?i)(?:wepay).{0,40}\\b([a-zA-Z0-9_?]{62})\\b"
+		},
+		{
+			"name": "Currencyscoop",
+			"regex": "(?i)(?:currencyscoop).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Upwave",
+			"regex": "(?i)(?:upwave).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Geckoboard",
+			"regex": "(?i)(?:geckoboard).{0,40}\\b([a-zA-Z0-9]{44})\\b"
+		},
+		{
+			"name": "Lendflow",
+			"regex": "(?i)(?:lendflow).{0,40}\\b([a-zA-Z0-9]{36}\\.[a-zA-Z0-9]{235}\\.[a-zA-Z0-9]{32}\\-[a-zA-Z0-9]{47}\\-[a-zA-Z0-9_]{162}\\-[a-zA-Z0-9]{42}\\-[a-zA-Z0-9_]{40}\\-[a-zA-Z0-9_]{66}\\-[a-zA-Z0-9_]{59}\\-[a-zA-Z0-9]{7}\\-[a-zA-Z0-9_]{220})\\b"
+		},
+		{
+			"name": "Eagleeyenetworks - 1",
+			"regex": "(?i)(?:eagleeyenetworks).{0,40}\\b([a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,12}.[a-zA-Z0-9]{2,5})\\b"
+		},
+		{
+			"name": "Eagleeyenetworks - 2",
+			"regex": "(?i)(?:eagleeyenetworks).{0,40}\\b([a-zA-Z0-9]{15})\\b"
+		},
+		{
+			"name": "Bannerbear",
+			"regex": "(?i)(?:bannerbear).{0,40}\\b([0-9a-zA-Z]{22}tt)\\b"
+		},
+		{
+			"name": "Twilio - 1",
+			"regex": "\\bAC[0-9a-f]{32}\\b"
+		},
+		{
+			"name": "Twilio - 2",
+			"regex": "\\b[0-9a-f]{32}\\b"
+		},
+		{
+			"name": "Copper - 1",
+			"regex": "\\b([a-z0-9]{4,25}@[a-zA-Z0-9]{2,12}.[a-zA-Z0-9]{2,6})\\b"
+		},
+		{
+			"name": "Copper - 2",
+			"regex": "(?i)(?:copper).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Appfollow",
+			"regex": "(?i)(?:appfollow).{0,40}\\b([0-9A-Za-z]{20})\\b"
+		},
+		{
+			"name": "Reallysimplesystems",
+			"regex": "\\b(ey[a-zA-Z0-9-._]{153}.ey[a-zA-Z0-9-._]{916,1000})\\b"
+		},
+		{
+			"name": "Saucelabs - 1",
+			"regex": "\\b(oauth\\-[a-z0-9]{8,}\\-[a-z0-9]{5})\\b"
+		},
+		{
+			"name": "Saucelabs - 2",
+			"regex": "(?i)(?:saucelabs).{0,40}\\b([a-z0-9]{8}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{12})\\b"
+		},
+		{
+			"name": "Refiner",
+			"regex": "(?i)(?:refiner).{0,40}\\b([0-9Aa-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+		},
+		{
+			"name": "Kickbox",
+			"regex": "(?i)(?:kickbox).{0,40}\\b([a-zA-Z0-9_]+[a-zA-Z0-9]{64})\\b"
+		},
+		{
+			"name": "Crowdin",
+			"regex": "(?i)(?:crowdin).{0,40}\\b([0-9A-Za-z]{80})\\b"
+		},
+		{
+			"name": "Tiingo",
+			"regex": "(?i)(?:tiingo).{0,40}\\b([0-9a-z]{40})\\b"
+		},
+		{
+			"name": "Column",
+			"regex": "(?i)(?:column).{0,40}\\b((?:test|live)_[a-zA-Z0-9]{27})\\b"
+		},
+		{
+			"name": "Tru - 1",
+			"regex": "(?i)(?:tru).{0,40}\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+		},
+		{
+			"name": "Tru - 2",
+			"regex": "(?i)(?:tru).{0,40}\\b([0-9a-zA-Z.-_]{26})\\b"
+		},
+		{
+			"name": "Mite - 1",
+			"regex": "(?i)(?:mite).{0,40}\\b([0-9a-z]{16})\\b"
+		},
+		{
+			"name": "Mite - 2",
+			"regex": "\\b([0-9a-z-]{1,}.mite.yo.lk)\\b"
+		},
+		{
+			"name": "Eightxeight - 1",
+			"regex": "(?i)(?:8x8).{0,40}\\b([a-zA-Z0-9_]{18,30})\\b"
+		},
+		{
+			"name": "Eightxeight - 2",
+			"regex": "(?i)(?:8x8).{0,40}\\b([a-zA-Z0-9]{43})\\b"
+		},
+		{
+			"name": "Feedier",
+			"regex": "(?i)(?:feedier).{0,40}\\b([a-z0-9A-Z]{32})\\b"
+		},
+		{
+			"name": "Iexcloud",
+			"regex": "(?i)(?:iexcloud).{0,40}\\b([a-z0-9_]{35})\\b"
+		},
+		{
+			"name": "Sportsmonk",
+			"regex": "(?i)(?:sportsmonk).{0,40}\\b([0-9a-zA-Z]{60})\\b"
+		},
+		{
+			"name": "Ipinfodb",
+			"regex": "(?i)(?:ipinfodb).{0,40}\\b([a-z0-9]{64})\\b"
+		},
+		{
+			"name": "Zendeskapi - 1",
+			"regex": "\\b([a-zA-Z-0-9]{3,16}\\.zendesk\\.com)\\b"
+		},
+		{
+			"name": "Zendeskapi - 2",
+			"regex": "\\b([a-zA-Z-0-9-]{5,16}\\@[a-zA-Z-0-9]{4,16}\\.[a-zA-Z-0-9]{3,6})\\b"
+		},
+		{
+			"name": "Zendeskapi - 3",
+			"regex": "(?i)(?:zendesk).{0,40}([A-Za-z0-9_-]{40})"
+		},
+		{
+			"name": "Keenio - 1",
+			"regex": "(?i)(?:keen).{0,40}\\b([0-9a-z]{24})\\b"
+		},
+		{
+			"name": "Keenio - 2",
+			"regex": "(?i)(?:keen).{0,40}\\b([0-9A-Z]{64})\\b"
+		},
+		{
+			"name": "Everhour",
+			"regex": "(?i)(?:everhour).{0,40}\\b([0-9Aa-f]{4}-[0-9a-f]{4}-[0-9a-f]{6}-[0-9a-f]{6}-[0-9a-f]{8})\\b"
+		},
+		{
+			"name": "Html2pdf",
+			"regex": "(?i)(?:html2pdf).{0,40}\\b([a-zA-Z0-9]{64})\\b"
+		},
+		{
+			"name": "Travisci",
+			"regex": "(?i)(?:travis).{0,40}\\b([a-zA-Z0-9A-Z_]{22})\\b"
+		},
+		{
+			"name": "Clockify",
+			"regex": "(?i)(?:clockify).{0,40}\\b([a-zA-Z0-9]{48})\\b"
+		},
+		{
+			"name": "Teamworkcrm",
+			"regex": "(?i)(?:teamwork|teamworkcrm).{0,40}\\b(tkn\\.v1_[0-9A-Za-z]{71}=[ \\r\\n]{1})"
+		},
+		{
+			"name": "Scraperbox",
+			"regex": "(?i)(?:scraperbox).{0,40}\\b([A-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Scalewaykey",
+			"regex": "(?i)(?:scaleway).{0,40}\\b([0-9a-z]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+		},
+		{
+			"name": "Newscatcher",
+			"regex": "(?i)(?:newscatcher).{0,40}\\b([0-9A-Za-z_]{43})\\b"
+		},
+		{
+			"name": "Api2cart",
+			"regex": "(?i)(?:api2cart).{0,40}\\b([0-9a-f]{32})\\b"
+		},
+		{
+			"name": "Maxmindlicense - 1",
+			"regex": "(?i)(?:maxmind|geoip).{0,40}\\b([0-9A-Za-z]{16})\\b"
+		},
+		{
+			"name": "Maxmindlicense - 2",
+			"regex": "(?i)(?:maxmind|geoip).{0,40}\\b([0-9]{2,7})\\b"
+		},
+		{
+			"name": "Luno - 1",
+			"regex": "(?i)(?:luno).{0,40}\\b([a-z0-9]{13})\\b"
+		},
+		{
+			"name": "Luno - 2",
+			"regex": "(?i)(?:luno).{0,40}\\b([a-zA-Z0-9_-]{43})\\b"
+		},
+		{
+			"name": "Geoipifi",
+			"regex": "(?i)(?:ipifi).{0,40}\\b([a-z0-9A-Z_]{32})\\b"
+		},
+		{
+			"name": "Satismeterwritekey",
+			"regex": "(?i)(?:satismeter).{0,40}\\b([a-z0-9A-Z]{16})\\b"
+		},
+		{
+			"name": "Elasticemail",
+			"regex": "(?i)(?:elastic).{0,40}\\b([A-Za-z0-9_-]{96})\\b"
+		},
+		{
+			"name": "Amplitudeapikey",
+			"regex": "(?i)(?:amplitude).{0,40}\\b([a-f0-9]{32})"
+		},
+		{
+			"name": "Buildkite",
+			"regex": "(?i)(?:buildkite).{0,40}\\b([a-z0-9]{40})\\b"
+		},
+		{
+			"name": "Finnhub",
+			"regex": "(?i)(?:finnhub).{0,40}\\b([0-9a-z]{20})\\b"
+		},
+		{
+			"name": "Veriphone",
+			"regex": "(?i)(?:veriphone).{0,40}\\b([0-9A-Z]{32})\\b"
+		},
+		{
+			"name": "Convier",
+			"regex": "(?i)(?:convier).{0,40}\\b([0-9]{2}\\|[a-zA-Z0-9]{40})\\b"
+		},
+		{
+			"name": "Asanaoauth",
+			"regex": "(?i)(?:asana).{0,40}\\b([a-z\\/:0-9]{51})\\b"
+		},
+		{
+			"name": "Appcues - 1",
+			"regex": "(?i)(?:appcues).{0,40}\\b([0-9]{5})\\b"
+		},
+		{
+			"name": "Appcues - 2",
+			"regex": "(?i)(?:appcues).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Appcues - 3",
+			"regex": "(?i)(?:appcues).{0,40}\\b([a-z0-9-]{39})\\b"
+		},
+		{
+			"name": "Gyazo",
+			"regex": "(?i)(?:gyazo).{0,40}\\b([0-9A-Za-z-]{43})\\b"
+		},
+		{
+			"name": "Stockdata",
+			"regex": "(?i)(?:stockdata).{0,40}\\b([0-9A-Za-z]{40})\\b"
+		},
+		{
+			"name": "Allsports",
+			"regex": "(?i)(?:allsports).{0,40}\\b([0-9a-z]{64})\\b"
+		},
+		{
+			"name": "Todoist",
+			"regex": "(?i)(?:todoist).{0,40}\\b([0-9a-z]{40})\\b"
+		},
+		{
+			"name": "Twelvedata",
+			"regex": "(?i)(?:twelvedata).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Metaapi - 1",
+			"regex": "(?i)(?:metaapi|meta-api).{0,40}\\b([0-9a-f]{64})\\b"
+		},
+		{
+			"name": "Metaapi - 2",
+			"regex": "(?i)(?:metaapi|meta-api).{0,40}\\b([0-9a-f]{24})\\b"
+		},
+		{
+			"name": "Simvoly",
+			"regex": "(?i)(?:simvoly).{0,40}\\b([a-z0-9]{33})\\b"
+		},
+		{
+			"name": "Bugherd",
+			"regex": "(?i)(?:bugherd).{0,40}\\b([0-9a-z]{22})\\b"
+		},
+		{
+			"name": "Pipedrive",
+			"regex": "(?i)(?:pipedrive).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+		},
+		{
+			"name": "Livestorm",
+			"regex": "(?i)(?:livestorm).{0,40}\\b(eyJhbGciOiJIUzI1NiJ9\\.eyJhdWQiOiJhcGkubGl2ZXN0b3JtLmNvIiwianRpIjoi[0-9A-Z-a-z]{134}\\.[0-9A-Za-z\\-\\_]{43}[ \\r\\n]{1})"
+		},
+		{
+			"name": "Loginradius",
+			"regex": "(?i)(?:loginradius).{0,40}\\b([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+		},
+		{
+			"name": "Stytch - 1",
+			"regex": "(?i)(?:stytch).{0,40}\\b([a-zA-Z0-9-_]{47}=)"
+		},
+		{
+			"name": "Stytch - 2",
+			"regex": "(?i)(?:stytch).{0,40}\\b([a-z0-9-]{49})\\b"
+		},
+		{
+			"name": "Heroku",
+			"regex": "(?i)(?:heroku).{0,40}\\b([0-9Aa-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+		},
+		{
+			"name": "Customerio",
+			"regex": "(?i)(?:customer).{0,40}\\b([a-z0-9A-Z]{20})\\b"
+		},
+		{
+			"name": "Calorieninja",
+			"regex": "(?i)(?:calorieninja).{0,40}\\b([0-9A-Za-z]{40})\\b"
+		},
+		{
+			"name": "Cicero",
+			"regex": "(?i)(?:cicero).{0,40}\\b([0-9a-z]{40})\\b"
+		},
+		{
+			"name": "Travelpayouts",
+			"regex": "(?i)(?:travelpayouts).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Contentfulpersonalaccesstoken",
+			"regex": "\\b([CFPAT\\-a-zA-Z-0-9]{49})\\b"
+		},
+		{
+			"name": "Happyscribe",
+			"regex": "(?i)(?:happyscribe).{0,40}\\b([0-9a-zA-Z]{24})\\b"
+		},
+		{
+			"name": "Getemails - 1",
+			"regex": "(?i)(?:getemails).{0,40}\\b([a-z0-9-]{26})\\b"
+		},
+		{
+			"name": "Getemails - 2",
+			"regex": "(?i)(?:getemails).{0,40}\\b([a-z0-9-]{18})\\b"
+		},
+		{
+			"name": "Alconost",
+			"regex": "(?i)(?:alconost).{0,40}\\b([0-9Aa-z]{32})\\b"
+		},
+		{
+			"name": "Weatherbit",
+			"regex": "(?i)(?:weatherbit).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Audd",
+			"regex": "(?i)(?:audd).{0,40}\\b([a-z0-9-]{32})\\b"
+		},
+		{
+			"name": "Apimatic - 1",
+			"regex": "(?i)(?:apimatic).{0,40}\\b([a-z0-9-\\S]{8,32})\\b"
+		},
+		{
+			"name": "Apimatic - 2",
+			"regex": "(?i)(?:apimatic).{0,40}\\b([a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,12}.[a-zA-Z0-9]{2,5})\\b"
+		},
+		{
+			"name": "Baremetrics",
+			"regex": "(?i)(?:baremetrics).{0,40}\\b([a-zA-Z0-9_]{25})\\b"
+		},
+		{
+			"name": "Privatekey",
+			"regex": "(?i)-----\\s*?BEGIN[ A-Z0-9_-]*?PRIVATE KEY\\s*?-----[\\s\\S]*?----\\s*?END[ A-Z0-9_-]*? PRIVATE KEY\\s*?-----"
+		},
+		{
+			"name": "Closecrm",
+			"regex": "\\b(api_[a-z0-9A-Z.]{45})\\b"
+		},
+		{
+			"name": "Unsplash",
+			"regex": "(?i)(?:unsplash).{0,40}\\b([0-9A-Za-z_]{43})\\b"
+		},
+		{
+			"name": "Strava - 1",
+			"regex": "(?i)(?:strava).{0,40}\\b([0-9]{5})\\b"
+		},
+		{
+			"name": "Strava - 2",
+			"regex": "(?i)(?:strava).{0,40}\\b([0-9a-z]{40})\\b"
+		},
+		{
+			"name": "Rawg",
+			"regex": "(?i)(?:rawg).{0,40}\\b([0-9Aa-z]{32})\\b"
+		},
+		{
+			"name": "Mapbox - 1",
+			"regex": "([a-zA-Z-0-9]{4,32})"
+		},
+		{
+			"name": "Mapbox - 2",
+			"regex": "\\b(sk\\.[a-zA-Z-0-9\\.]{80,240})\\b"
+		},
+		{
+			"name": "Magnetic",
+			"regex": "(?i)(?:magnetic).{0,40}\\b([0-9Aa-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+		},
+		{
+			"name": "Pixabay",
+			"regex": "(?i)(?:pixabay).{0,40}\\b([a-z0-9-]{34})\\b"
+		},
+		{
+			"name": "Sentiment - 1",
+			"regex": "(?i)(?:sentiment).{0,40}\\b([0-9]{17})\\b"
+		},
+		{
+			"name": "Sentiment - 2",
+			"regex": "(?i)(?:sentiment).{0,40}\\b([a-zA-Z0-9]{20})\\b"
+		},
+		{
+			"name": "Linkpreview",
+			"regex": "(?i)(?:linkpreview).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Gitlab",
+			"regex": "(?i)(?:gitlab).{0,40}\\b([a-zA-Z0-9\\-=_]{20,22})\\b"
+		},
+		{
+			"name": "Alienvault",
+			"regex": "(?i)(?:alienvault).{0,40}\\b([a-z0-9]{64})\\b"
+		},
+		{
+			"name": "Happi",
+			"regex": "(?i)(?:happi).{0,40}\\b([a-zA-Z0-9]{56})"
+		},
+		{
+			"name": "Snykkey",
+			"regex": "(?i)(?:snyk).{0,40}\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+		},
+		{
+			"name": "Cliengo",
+			"regex": "(?i)(?:cliengo).{0,40}\\b([0-9a-f]{8}\\-[0-9a-f]{4}\\-[0-9a-f]{4}\\-[0-9a-f]{4}\\-[0-9a-f]{12})\\b"
+		},
+		{
+			"name": "Dynalist",
+			"regex": "(?i)(?:dynalist).{0,40}\\b([a-zA-Z0-9-_]{128})\\b"
+		},
+		{
+			"name": "Apacta",
+			"regex": "(?i)(?:apacta).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Adobeio - 1",
+			"regex": "(?i)(?:adobe).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Adobeio - 2",
+			"regex": "(?i)(?:adobe).{0,40}\\b([a-zA-Z0-9.]{12})\\b"
+		},
+		{
+			"name": "Abbysale",
+			"regex": "(?i)(?:abbysale).{0,40}\\b([a-z0-9A-Z]{40})\\b"
+		},
+		{
+			"name": "Optimizely",
+			"regex": "(?i)(?:optimizely).{0,40}\\b([0-9A-Za-z-:]{54})\\b"
+		},
+		{
+			"name": "Deputy - 1",
+			"regex": "\\b([0-9a-z]{1,}.as.deputy.com)\\b"
+		},
+		{
+			"name": "Deputy - 2",
+			"regex": "(?i)(?:deputy).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Opencagedata",
+			"regex": "(?i)(?:opencagedata).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Visualcrossing",
+			"regex": "(?i)(?:visualcrossing).{0,40}\\b([0-9A-Z]{25})\\b"
+		},
+		{
+			"name": "Freshdesk - 1",
+			"regex": "(?i)(?:freshdesk).{0,40}\\b([0-9A-Za-z]{20})\\b"
+		},
+		{
+			"name": "Freshdesk - 2",
+			"regex": "\\b([0-9a-z-]{1,}.freshdesk.com)\\b"
+		},
+		{
+			"name": "Blogger",
+			"regex": "(?i)(?:blogger).{0,40}\\b([0-9A-Za-z-]{39})\\b"
+		},
+		{
+			"name": "Courier",
+			"regex": "(?i)(?:courier).{0,40}\\b(pk\\_[a-zA-Z0-9]{1,}\\_[a-zA-Z0-9]{28})\\b"
+		},
+		{
+			"name": "Caspio - 1",
+			"regex": "(?i)(?:caspio).{0,40}\\b([a-z0-9]{8})\\b"
+		},
+		{
+			"name": "Caspio - 2",
+			"regex": "(?i)(?:caspio).{0,40}\\b([a-z0-9]{50})\\b"
+		},
+		{
+			"name": "Currencycloud - 1",
+			"regex": "(?i)(?:currencycloud).{0,40}\\b([0-9a-z]{64})\\b"
+		},
+		{
+			"name": "Oanda",
+			"regex": "(?i)(?:oanda).{0,40}\\b([a-zA-Z0-9]{24})\\b"
+		},
+		{
+			"name": "Aeroworkflow - 1",
+			"regex": "(?i)(?:aeroworkflow).{0,40}\\b([0-9]{1,})\\b"
+		},
+		{
+			"name": "Aeroworkflow - 2",
+			"regex": "(?i)(?:aeroworkflow).{0,40}\\b([a-zA-Z0-9^!]{20})\\b"
+		},
+		{
+			"name": "Supernotesapi",
+			"regex": "(?i)(?:supernotes).{0,40}([ \\r\\n]{0,1}[0-9A-Za-z\\-_]{43}[ \\r\\n]{1})"
+		},
+		{
+			"name": "Rubygems",
+			"regex": "\\b(rubygems_[a-zA0-9]{48})\\b"
+		},
+		{
+			"name": "Edamam - 1",
+			"regex": "(?i)(?:edamam).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Edamam - 2",
+			"regex": "(?i)(?:edamam).{0,40}\\b([0-9a-z]{8})\\b"
+		},
+		{
+			"name": "Apollo",
+			"regex": "(?i)(?:apollo).{0,40}\\b([a-zA-Z0-9]{22})\\b"
+		},
+		{
+			"name": "Launchdarkly",
+			"regex": "(?i)(?:launchdarkly).{0,40}\\b([a-z0-9-]{40})\\b"
+		},
+		{
+			"name": "Tly",
+			"regex": "(?i)(?:tly).{0,40}\\b([0-9A-Za-z]{60})\\b"
+		},
+		{
+			"name": "Geocode",
+			"regex": "(?i)(?:geocode).{0,40}\\b([a-z0-9]{28})\\b"
+		},
+		{
+			"name": "Siteleaf",
+			"regex": "(?i)(?:siteleaf).{0,40}\\b([0-9Aa-z]{32})\\b"
+		},
+		{
+			"name": "Stitchdata",
+			"regex": "(?i)(?:stitchdata).{0,40}\\b([0-9a-z_]{35})\\b"
+		},
+		{
+			"name": "Mailgun 1",
+			"regex": "(?i)(?:mailgun).{0,40}\\b([a-zA-Z-0-9]{72})\\b"
+		},
+		{
+			"name": "Mandrill",
+			"regex": "(?i)(?:mandrill).{0,40}\\b([A-Za-z0-9_-]{22})\\b"
+		},
+		{
+			"name": "Route4me",
+			"regex": "(?i)(?:route4me).{0,40}\\b([0-9A-Z]{32})\\b"
+		},
+		{
+			"name": "Customerguru - 1",
+			"regex": "(?i)(?:guru).{0,40}\\b([a-z0-9A-Z]{50})\\b"
+		},
+		{
+			"name": "Customerguru - 2",
+			"regex": "(?i)(?:guru).{0,40}\\b([a-z0-9A-Z]{30})\\b"
+		},
+		{
+			"name": "Blitapp",
+			"regex": "(?i)(?:blitapp).{0,40}\\b([a-zA-Z0-9_-]{39})\\b"
+		},
+		{
+			"name": "Edenai",
+			"regex": "(?i)(?:edenai).{0,40}\\b([a-zA-Z0-9]{36}.[a-zA-Z0-9]{92}.[a-zA-Z0-9_]{43})\\b"
+		},
+		{
+			"name": "Prospectio",
+			"regex": "(?i)(?:prospect).{0,40}\\b([a-z0-9A-Z-]{50})\\b"
+		},
+		{
+			"name": "Airship",
+			"regex": "(?i)(?:airship).{0,40}\\b([0-9Aa-zA-Z]{91})\\b"
+		},
+		{
+			"name": "Sumologickey - 1",
+			"regex": "(?i)(?:sumo).{0,40}\\b([A-Za-z0-9]{14})\\b"
+		},
+		{
+			"name": "Sumologickey - 2",
+			"regex": "(?i)(?:sumo).{0,40}\\b([A-Za-z0-9]{64})\\b"
+		},
+		{
+			"name": "Cloze - 1",
+			"regex": "(?i)(?:cloze).{0,40}\\b([0-9a-f]{32})\\b"
+		},
+		{
+			"name": "Cloze - 2",
+			"regex": "(?i)(?:cloze).{0,40}\\b([\\w\\.-]+@[\\w-]+\\.[\\w\\.-]{2,5})\\b"
+		},
+		{
+			"name": "Bitfinex",
+			"regex": "(?i)(?:bitfinex).{0,40}\\b([A-Za-z0-9_-]{43})\\b"
+		},
+		{
+			"name": "Meaningcloud",
+			"regex": "(?i)(?:meaningcloud).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Zenscrape",
+			"regex": "(?i)(?:zenscrape).{0,40}\\b([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+		},
+		{
+			"name": "Delighted",
+			"regex": "(?i)(?:delighted).{0,40}\\b([a-z0-9A-Z]{32})\\b"
+		},
+		{
+			"name": "Auth0managementapitoken",
+			"regex": "(?i)(?:auth0).{0,40}\\b(ey[a-zA-Z0-9._-]+)\\b"
+		},
+		{
+			"name": "Coinapi",
+			"regex": "(?i)(?:coinapi).{0,40}\\b([A-Z0-9-]{36})\\b"
+		},
+		{
+			"name": "Bitmex - 1",
+			"regex": "(?i)(?:bitmex).{0,40}([ \\r\\n]{1}[0-9a-zA-Z\\-\\_]{24}[ \\r\\n]{1})"
+		},
+		{
+			"name": "Bitmex - 2",
+			"regex": "(?i)(?:bitmex).{0,40}([ \\r\\n]{1}[0-9a-zA-Z\\-\\_]{48}[ \\r\\n]{1})"
+		},
+		{
+			"name": "Clinchpad",
+			"regex": "(?i)(?:clinchpad).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Ritekit",
+			"regex": "(?i)(?:ritekit).{0,40}\\b([0-9a-f]{44})\\b"
+		},
+		{
+			"name": "Sentrytoken",
+			"regex": "(?i)(?:sentry).{0,40}\\b([a-f0-9]{64})\\b"
+		},
+		{
+			"name": "Pipedream",
+			"regex": "(?i)(?:pipedream).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Mavenlink",
+			"regex": "(?i)(?:mavenlink).{0,40}\\b([0-9a-z]{64})\\b"
+		},
+		{
+			"name": "Ubidots",
+			"regex": "\\b(BBFF-[0-9a-zA-Z]{30})\\b"
+		},
+		{
+			"name": "Posthog",
+			"regex": "\\b(phc_[a-zA-Z0-9_]{43})\\b"
+		},
+		{
+			"name": "Passbase",
+			"regex": "(?i)(?:passbase).{0,40}\\b([a-zA-Z0-9]{128})\\b"
+		},
+		{
+			"name": "Humanity",
+			"regex": "(?i)(?:humanity).{0,40}\\b([0-9a-z]{40})\\b"
+		},
+		{
+			"name": "Figmapersonalaccesstoken",
+			"regex": "(?i)(?:figma).{0,40}\\b([0-9]{6}-[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+		},
+		{
+			"name": "Ticketmaster",
+			"regex": "(?i)(?:ticketmaster).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Lexigram",
+			"regex": "(?i)(?:lexigram).{0,40}\\b([a-zA-Z0-9\\S]{301})\\b"
+		},
+		{
+			"name": "Timezoneapi",
+			"regex": "(?i)(?:timezoneapi).{0,40}\\b([a-zA-Z0-9]{20})\\b"
+		},
+		{
+			"name": "Zonkafeedback",
+			"regex": "(?i)(?:zonka).{0,40}\\b([A-Za-z0-9]{36})\\b"
+		},
+		{
+			"name": "Smartystreets - 1",
+			"regex": "(?i)(?:smartystreets).{0,40}\\b([a-zA-Z0-9]{20})\\b"
+		},
+		{
+			"name": "Smartystreets - 2",
+			"regex": "(?i)(?:smartystreets).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Liveagent",
+			"regex": "(?i)(?:liveagent).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Dyspatch",
+			"regex": "(?i)(?:dyspatch).{0,40}\\b([A-Z0-9]{52})\\b"
+		},
+		{
+			"name": "Hellosign",
+			"regex": "(?i)(?:hellosign).{0,40}\\b([a-zA-Z-0-9/+]{64})\\b"
+		},
+		{
+			"name": "Datadogtoken - 1",
+			"regex": "(?i)(?:datadog).{0,40}\\b([a-zA-Z-0-9]{32})\\b"
+		},
+		{
+			"name": "Datadogtoken - 2",
+			"regex": "(?i)(?:datadog).{0,40}\\b([a-zA-Z-0-9]{40})\\b"
+		},
+		{
+			"name": "Noticeable",
+			"regex": "(?i)(?:noticeable).{0,40}\\b([0-9a-zA-Z]{20})\\b"
+		},
+		{
+			"name": "Vyte",
+			"regex": "(?i)(?:vyte).{0,40}\\b([0-9a-z]{50})\\b"
+		},
+		{
+			"name": "Autoklose",
+			"regex": "(?i)(?:autoklose).{0,40}\\b([a-zA-Z0-9-]{32})\\b"
+		},
+		{
+			"name": "Rebrandly",
+			"regex": "(?i)(?:rebrandly).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+		},
+		{
+			"name": "Fastlypersonaltoken",
+			"regex": "(?i)(?:fastly).{0,40}\\b([A-Za-z0-9_-]{32})\\b"
+		},
+		{
+			"name": "Newrelicpersonalapikey",
+			"regex": "(?i)(?:newrelic).{0,40}\\b([A-Za-z0-9_\\.]{4}-[A-Za-z0-9_\\.]{42})\\b"
+		},
+		{
+			"name": "Whoxy",
+			"regex": "(?i)(?:whoxy).{0,40}\\b([0-9a-z]{33})\\b"
+		},
+		{
+			"name": "Clockworksms - 1",
+			"regex": "(?i)(?:clockwork|textanywhere).{0,40}\\b([0-9a-zA-Z]{24})\\b"
+		},
+		{
+			"name": "Clockworksms - 2",
+			"regex": "(?i)(?:clockwork|textanywhere).{0,40}\\b([0-9]{5})\\b"
+		},
+		{
+			"name": "Ibmclouduserkey",
+			"regex": "(?i)(?:ibm).{0,40}\\b([A-Za-z0-9_-]{44})\\b"
+		},
+		{
+			"name": "Nutritionix - 1",
+			"regex": "(?i)(?:nutritionix).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Nutritionix - 2",
+			"regex": "(?i)(?:nutritionix).{0,40}\\b([a-z0-9]{8})\\b"
+		},
+		{
+			"name": "Cashboard - 1",
+			"regex": "(?i)(?:cashboard).{0,40}\\b([0-9A-Z]{3}-[0-9A-Z]{3}-[0-9A-Z]{3}-[0-9A-Z]{3})\\b"
+		},
+		{
+			"name": "Cashboard - 2",
+			"regex": "(?i)(?:cashboard).{0,40}\\b([0-9a-z]{1,})\\b"
+		},
+		{
+			"name": "Trelloapikey - 1",
+			"regex": "\\b([a-zA-Z-0-9]{64})\\b"
+		},
+		{
+			"name": "Trelloapikey - 2",
+			"regex": "(?i)(?:trello).{0,40}\\b([a-zA-Z-0-9]{32})\\b"
+		},
+		{
+			"name": "Getemail",
+			"regex": "(?i)(?:getemail).{0,40}\\b([a-zA-Z0-9-]{20})\\b"
+		},
+		{
+			"name": "Leadfeeder",
+			"regex": "(?i)(?:leadfeeder).{0,40}\\b([a-zA-Z0-9-]{43})\\b"
+		},
+		{
+			"name": "Madkudu",
+			"regex": "(?i)(?:madkudu).{0,40}\\b([0-9a-f]{32})\\b"
+		},
+		{
+			"name": "Postageapp",
+			"regex": "(?i)(?:postageapp).{0,40}\\b([0-9A-Za-z]{32})\\b"
+		},
+		{
+			"name": "Ringcentral - 1",
+			"regex": "(?i)(?:ringcentral).{0,40}\\b(https://www.[0-9A-Za-z_-]{1,}.com)\\b"
+		},
+		{
+			"name": "Ringcentral - 2",
+			"regex": "(?i)(?:ringcentral).{0,40}\\b([0-9A-Za-z_-]{22})\\b"
+		},
+		{
+			"name": "Ipquality",
+			"regex": "(?i)(?:ipquality).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Fixerio",
+			"regex": "(?i)(?:fixer).{0,40}\\b([A-Za-z0-9]{32})\\b"
+		},
+		{
+			"name": "Openuv",
+			"regex": "(?i)(?:openuv).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Screenshotapi",
+			"regex": "(?i)(?:screenshotapi).{0,40}\\b([0-9A-Z]{7}\\-[0-9A-Z]{7}\\-[0-9A-Z]{7}\\-[0-9A-Z]{7})\\b"
+		},
+		{
+			"name": "Float",
+			"regex": "(?i)(?:float).{0,40}\\b([a-zA-Z0-9-._+=]{59,60})\\b"
+		},
+		{
+			"name": "Unplugg",
+			"regex": "(?i)(?:unplu).{0,40}\\b([a-z0-9]{64})\\b"
+		},
+		{
+			"name": "Pubnubpublishkey - 1",
+			"regex": "\\b(sub-c-[0-9a-z]{8}-[a-z]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})\\b"
+		},
+		{
+			"name": "Pubnubpublishkey - 2",
+			"regex": "\\b(pub-c-[0-9a-z]{8}-[0-9a-z]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})\\b"
+		},
+		{
+			"name": "Aws - 1",
+			"regex": "\\b((?:AKIA|ABIA|ACCA|ASIA)[0-9A-Z]{16})\\b"
+		},
+		{
+			"name": "Aws - 2",
+			"regex": "\\b([A-Za-z0-9+/]{40})\\b"
+		},
+		{
+			"name": "Zipapi - 1",
+			"regex": "(?i)(?:zipapi).{0,40}\\b([a-zA-Z0-9!=@#$%^]{7,})"
+		},
+		{
+			"name": "Zipapi - 3",
+			"regex": "(?i)(?:zipapi).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Manifest",
+			"regex": "(?i)(?:manifest).{0,40}\\b([a-zA-z0-9]{32})\\b"
+		},
+		{
+			"name": "Verimail",
+			"regex": "(?i)(?:verimail).{0,40}\\b([A-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Squareup",
+			"regex": "\\b(sq0idp-[0-9A-Za-z]{22})\\b"
+		},
+		{
+			"name": "Bombbomb",
+			"regex": "(?i)(?:bombbomb).{0,40}\\b([a-zA-Z0-9-._]{704})\\b"
+		},
+		{
+			"name": "Airbrakeuserkey",
+			"regex": "(?i)(?:airbrake).{0,40}\\b([a-zA-Z-0-9]{40})\\b"
+		},
+		{
+			"name": "Freshbooks - 1",
+			"regex": "(?i)(?:freshbooks).{0,40}\\b([0-9a-z]{64})\\b"
+		},
+		{
+			"name": "Freshbooks - 2",
+			"regex": "(?i)(?:freshbooks).{0,40}\\b(https://www.[0-9A-Za-z_-]{1,}.com)\\b"
+		},
+		{
+			"name": "Abuseipdb",
+			"regex": "(?i)(?:abuseipdb).{0,40}\\b([a-z0-9]{80})\\b"
+		},
+		{
+			"name": "Clickuppersonaltoken",
+			"regex": "(?i)(?:clickup).{0,40}\\b(pk_[0-9]{8}_[0-9A-Z]{32})\\b"
+		},
+		{
+			"name": "Linemessaging",
+			"regex": "(?i)(?:line).{0,40}\\b([A-Za-z0-9+/]{171,172})\\b"
+		},
+		{
+			"name": "Mixpanel - 1",
+			"regex": "(?i)(?:mixpanel).{0,40}\\b([a-zA-Z0-9.-]{30,40})\\b"
+		},
+		{
+			"name": "Mixpanel - 2",
+			"regex": "(?i)(?:mixpanel).{0,40}\\b([a-zA-Z0-9-]{32})\\b"
+		},
+		{
+			"name": "Beamer",
+			"regex": "(?i)(?:beamer).{0,40}\\b([a-zA-Z0-9_+/]{45}=)"
+		},
+		{
+			"name": "Easyinsight - 1",
+			"regex": "(?i)(?:easyinsight|easy-insight).{0,40}\\b([a-zA-Z0-9]{20})\\b"
+		},
+		{
+			"name": "Easyinsight - 2",
+			"regex": "(?i)(?:easyinsight|easy-insight).{0,40}\\b([0-9Aa-zA-Z]{20})\\b"
+		},
+		{
+			"name": "Lob",
+			"regex": "(?i)(?:lob).{0,40}\\b([a-zA-Z0-9_]{40})\\b"
+		},
+		{
+			"name": "Qubole",
+			"regex": "(?i)(?:qubole).{0,40}\\b([0-9a-z]{64})\\b"
+		},
+		{
+			"name": "Salescookie",
+			"regex": "(?i)(?:salescookie).{0,40}\\b([a-zA-z0-9]{32})\\b"
+		},
+		{
+			"name": "Scrapersite",
+			"regex": "(?i)(?:scrapersite).{0,40}\\b([a-zA-Z0-9]{45})\\b"
+		},
+		{
+			"name": "Sherpadesk",
+			"regex": "(?i)(?:sherpadesk).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Runrunit - 1",
+			"regex": "(?i)(?:runrunit).{0,40}\\b([0-9a-f]{32})\\b"
+		},
+		{
+			"name": "Runrunit - 2",
+			"regex": "(?i)(?:runrunit).{0,40}\\b([0-9A-Za-z]{18,20})\\b"
+		},
+		{
+			"name": "Qualaroo",
+			"regex": "(?i)(?:qualaroo).{0,40}\\b([a-z0-9A-Z=]{64})"
+		},
+		{
+			"name": "Tallyfy",
+			"regex": "(?i)(?:tallyfy).{0,40}\\b([0-9A-Za-z]{36}\\.[0-9A-Za-z]{264}\\.[0-9A-Za-z\\-\\_]{683})\\b"
+		},
+		{
+			"name": "Facebookoauth",
+			"regex": "(?i)(?:facebook).{0,40}\\b([A-Za-z0-9]{32})\\b"
+		},
+		{
+			"name": "Billomat - 1",
+			"regex": "(?i)(?:billomat).{0,40}\\b([0-9a-z]{1,})\\b"
+		},
+		{
+			"name": "Billomat - 2",
+			"regex": "(?i)(?:billomat).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Deepai",
+			"regex": "(?i)(?:deepai).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Bugsnag",
+			"regex": "(?i)(?:bugsnag).{0,40}\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+		},
+		{
+			"name": "Mailjetbasicauth",
+			"regex": "(?i)(?:mailjet).{0,40}\\b([A-Za-z0-9]{87}\\=)"
+		},
+		{
+			"name": "Webscraping",
+			"regex": "(?i)(?:webscraping).{0,40}\\b([0-9A-Za-z]{32})\\b"
+		},
+		{
+			"name": "Youneedabudget",
+			"regex": "(?i)(?:youneedabudget).{0,40}\\b([0-9a-f]{64})\\b"
+		},
+		{
+			"name": "Semaphore",
+			"regex": "(?i)(?:semaphore).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Onepagecrm - 1",
+			"regex": "(?i)(?:onepagecrm).{0,40}\\b([a-zA-Z0-9=]{44})"
+		},
+		{
+			"name": "Onepagecrm - 2",
+			"regex": "(?i)(?:onepagecrm).{0,40}\\b([a-z0-9]{24})\\b"
+		},
+		{
+			"name": "Ayrshare",
+			"regex": "(?i)(?:ayrshare).{0,40}\\b([A-Z]{7}-[A-Z0-9]{7}-[A-Z0-9]{7}-[A-Z0-9]{7})\\b"
+		},
+		{
+			"name": "Buttercms",
+			"regex": "(?i)(?:buttercms).{0,40}\\b([a-z0-9]{40})\\b"
+		},
+		{
+			"name": "Coinbase",
+			"regex": "(?i)(?:coinbase).{0,40}\\b([a-zA-Z-0-9]{64})\\b"
+		},
+		{
+			"name": "Flickr",
+			"regex": "(?i)(?:flickr).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Calendlyapikey",
+			"regex": "(?i)(?:calendly).{0,40}\\b([a-zA-Z-0-9]{20}.[a-zA-Z-0-9]{171}.[a-zA-Z-0-9_]{43})\\b"
+		},
+		{
+			"name": "Voicegain",
+			"regex": "(?i)(?:voicegain).{0,40}\\b(ey[0-9a-zA-Z_-]{34}.ey[0-9a-zA-Z_-]{108}.[0-9a-zA-Z_-]{43})\\b"
+		},
+		{
+			"name": "Apifonica",
+			"regex": "(?i)(?:apifonica).{0,40}\\b([0-9a-z]{11}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+		},
+		{
+			"name": "Kraken - 1",
+			"regex": "(?i)(?:kraken).{0,40}\\b([0-9A-Za-z\\/\\+=]{56}[ \"'\\r\\n]{1})"
+		},
+		{
+			"name": "Kraken - 2",
+			"regex": "(?i)(?:kraken).{0,40}\\b([0-9A-Za-z\\/\\+=]{86,88}[ \"'\\r\\n]{1})"
+		},
+		{
+			"name": "Checklyhq",
+			"regex": "(?i)(?:checklyhq).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Coveralls",
+			"regex": "(?i)(?:coveralls).{0,40}\\b([a-zA-Z0-9-]{37})\\b"
+		},
+		{
+			"name": "Findl",
+			"regex": "(?i)(?:findl).{0,40}\\b([a-z0-9]{8}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{12})\\b"
+		},
+		{
+			"name": "Dwolla",
+			"regex": "(?i)(?:dwolla).{0,40}\\b([a-zA-Z-0-9]{50})\\b"
+		},
+		{
+			"name": "Postmark",
+			"regex": "(?i)(?:postmark).{0,40}\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+		},
+		{
+			"name": "Cloudmersive",
+			"regex": "(?i)(?:cloudmersive).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Nytimes",
+			"regex": "(?i)(?:nytimes).{0,40}\\b([a-z0-9A-Z-]{32})\\b"
+		},
+		{
+			"name": "Repairshopr - 1",
+			"regex": "(?i)(?:repairshopr).{0,40}\\b([a-zA-Z0-9_.!+$#^*]{3,32})\\b"
+		},
+		{
+			"name": "Repairshopr - 2",
+			"regex": "(?i)(?:repairshopr).{0,40}\\b([a-zA-Z0-9-]{51})\\b"
+		},
+		{
+			"name": "Quickmetrics",
+			"regex": "(?i)(?:quickmetrics).{0,40}\\b([a-zA-Z0-9_-]{22})\\b"
+		},
+		{
+			"name": "Spoonacular",
+			"regex": "(?i)(?:spoonacular).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Sheety - 1",
+			"regex": "(?i)(?:sheety).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Sheety - 2",
+			"regex": "(?i)(?:sheety).{0,40}\\b([0-9a-z]{64})\\b"
+		},
+		{
+			"name": "Pandadoc",
+			"regex": "(?i)(?:pandadoc).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+		},
+		{
+			"name": "Scraperapi",
+			"regex": "(?i)(?:scraperapi).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Buddyns",
+			"regex": "(?i)(?:buddyns).{0,40}\\b([0-9a-z]{40})\\b"
+		},
+		{
+			"name": "Restpack",
+			"regex": "(?i)(?:restpack).{0,40}\\b([a-zA-Z0-9]{48})\\b"
+		},
+		{
+			"name": "Sslmate",
+			"regex": "(?i)(?:sslmate).{0,40}\\b([a-zA-Z0-9]{36})\\b"
+		},
+		{
+			"name": "Discordbottoken - 1",
+			"regex": "(?i)(?:discord).{0,40}\\b([A-Za-z0-9_-]{24}\\.[A-Za-z0-9_-]{6}\\.[A-Za-z0-9_-]{27})\\b"
+		},
+		{
+			"name": "Discordbottoken - 2",
+			"regex": "(?i)(?:discord).{0,40}\\b([0-9]{17})\\b"
+		},
+		{
+			"name": "Alegra - 1",
+			"regex": "(?i)(?:alegra).{0,40}\\b([a-z0-9-]{20})\\b"
+		},
+		{
+			"name": "Alegra - 2",
+			"regex": "(?i)(?:alegra).{0,40}\\b([a-zA-Z0-9.-@]{25,30})\\b"
+		},
+		{
+			"name": "Centralstationcrm",
+			"regex": "(?i)(?:centralstation).{0,40}\\b([a-z0-9]{30})\\b"
+		},
+		{
+			"name": "Clearbit",
+			"regex": "(?i)(?:clearbit).{0,40}\\b([0-9a-z_]{35})\\b"
+		},
+		{
+			"name": "Walkscore",
+			"regex": "(?i)(?:walkscore).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Amadeus - 1",
+			"regex": "(?i)(?:amadeus).{0,40}\\b([0-9A-Za-z]{32})\\b"
+		},
+		{
+			"name": "Amadeus - 2",
+			"regex": "(?i)(?:amadeus).{0,40}\\b([0-9A-Za-z]{16})\\b"
+		},
+		{
+			"name": "Intrinio",
+			"regex": "(?i)(?:intrinio).{0,40}\\b([a-zA-Z0-9]{44})\\b"
+		},
+		{
+			"name": "Fetchrss",
+			"regex": "(?i)(?:fetchrss).{0,40}\\b([0-9A-Za-z.]{40})\\b"
+		},
+		{
+			"name": "Myintervals",
+			"regex": "(?i)(?:myintervals).{0,40}\\b([0-9a-z]{11})\\b"
+		},
+		{
+			"name": "Sirv - 1",
+			"regex": "(?i)(?:sirv).{0,40}\\b([a-zA-Z0-9\\S]{88})"
+		},
+		{
+			"name": "Sirv - 2",
+			"regex": "(?i)(?:sirv).{0,40}\\b([a-zA-Z0-9]{26})\\b"
+		},
+		{
+			"name": "Apiscience",
+			"regex": "(?i)(?:apiscience).{0,40}\\b([a-bA-Z0-9\\S]{22})\\b"
+		},
+		{
+			"name": "Skybiometry",
+			"regex": "(?i)(?:skybiometry).{0,40}\\b([0-9a-z]{25,26})\\b"
+		},
+		{
+			"name": "Mesibo",
+			"regex": "(?i)(?:mesibo).{0,40}\\b([0-9A-Za-z]{64})\\b"
+		},
+		{
+			"name": "Worldcoinindex",
+			"regex": "(?i)(?:worldcoinindex).{0,40}\\b([a-zA-Z0-9]{35})\\b"
+		},
+		{
+			"name": "Poloniex - 1",
+			"regex": "(?i)(?:poloniex).{0,40}\\b([0-9a-f]{128})\\b"
+		},
+		{
+			"name": "Poloniex - 2",
+			"regex": "(?i)(?:poloniex).{0,40}\\b([0-9A-Z]{8}-[0-9A-Z]{8}-[0-9A-Z]{8}-[0-9A-Z]{8})\\b"
+		},
+		{
+			"name": "Cannyio",
+			"regex": "(?i)(?:canny).{0,40}\\b([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[0-9]{4}-[a-z0-9]{12})\\b"
+		},
+		{
+			"name": "Deepgram",
+			"regex": "(?i)(?:deepgram).{0,40}\\b([0-9a-z]{40})\\b"
+		},
+		{
+			"name": "Pusherchannelkey - 1",
+			"regex": "(?i)(?:key).{0,40}\\b([a-z0-9]{20})\\b"
+		},
+		{
+			"name": "Pusherchannelkey - 2",
+			"regex": "(?i)(?:pusher).{0,40}\\b([a-z0-9]{20})\\b"
+		},
+		{
+			"name": "Pusherchannelkey - 3",
+			"regex": "(?i)(?:pusher).{0,40}\\b([0-9]{7})\\b"
+		},
+		{
+			"name": "Powrbot",
+			"regex": "(?i)(?:powrbot).{0,40}\\b([a-z0-9A-Z]{40})\\b"
+		},
+		{
+			"name": "Hereapi",
+			"regex": "(?i)(?:hereapi).{0,40}\\b([a-zA-Z0-9\\S]{43})\\b"
+		},
+		{
+			"name": "Tatumio",
+			"regex": "(?i)(?:tatum).{0,40}\\b([0-9a-z-]{36})\\b"
+		},
+		{
+			"name": "Flatio",
+			"regex": "(?i)(?:flat).{0,40}\\b([0-9a-z]{128})\\b"
+		},
+		{
+			"name": "Alibaba - 1",
+			"regex": "\\b([a-zA-Z0-9]{30})\\b"
+		},
+		{
+			"name": "Alibaba - 2",
+			"regex": "\\b(LTAI[a-zA-Z0-9]{17,21})[\\\"' ;\\s]*"
+		},
+		{
+			"name": "Postman",
+			"regex": "\\b(PMAK-[a-zA-Z-0-9]{59})\\b"
+		},
+		{
+			"name": "Vercel",
+			"regex": "(?i)(?:vercel).{0,40}\\b([a-zA-Z0-9]{24})\\b"
+		},
+		{
+			"name": "Adafruitio",
+			"regex": "\\b(aio\\_[a-zA-Z0-9]{28})\\b"
+		},
+		{
+			"name": "Cloudflareapitoken",
+			"regex": "(?i)(?:cloudflare).{0,40}\\b([A-Za-z0-9_-]{40})\\b"
+		},
+		{
+			"name": "Checio",
+			"regex": "(?i)(?:checio).{0,40}\\b(pk_[a-z0-9]{45})\\b"
+		},
+		{
+			"name": "Apiflash - 1",
+			"regex": "(?i)(?:apiflash).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Apiflash - 2",
+			"regex": "(?i)(?:apiflash).{0,40}\\b([a-zA-Z0-9\\S]{21,30})\\b"
+		},
+		{
+			"name": "Paypaloauth - 1",
+			"regex": "\\b([A-Za-z0-9_\\.]{7}-[A-Za-z0-9_\\.]{72})\\b"
+		},
+		{
+			"name": "Paypaloauth - 2",
+			"regex": "\\b([A-Za-z0-9_\\.]{69}-[A-Za-z0-9_\\.]{10})\\b"
+		},
+		{
+			"name": "Scrapingant",
+			"regex": "(?i)(?:scrapingant).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Getsandbox - 1",
+			"regex": "(?i)(?:getsandbox).{0,40}\\b([a-z0-9-]{40})\\b"
+		},
+		{
+			"name": "Getsandbox - 2",
+			"regex": "(?i)(?:getsandbox).{0,40}\\b([a-z0-9-]{15,30})\\b"
+		},
+		{
+			"name": "Stripe",
+			"regex": "[rs]k_live_[a-zA-Z0-9]{20,30}"
+		},
+		{
+			"name": "Bitbar",
+			"regex": "(?i)(?:bitbar).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Stormglass",
+			"regex": "(?i)(?:stormglass).{0,40}\\b([0-9Aa-z-]{73})\\b"
+		},
+		{
+			"name": "Asanapersonalaccesstoken",
+			"regex": "(?i)(?:asana).{0,40}\\b([0-9]{1,}\\/[0-9]{16,}:[A-Za-z0-9]{32,})\\b"
+		},
+		{
+			"name": "Checkvist - 1",
+			"regex": "(?i)(?:checkvist).{0,40}\\b([\\w\\.-]+@[\\w-]+\\.[\\w\\.-]{2,5})\\b"
+		},
+		{
+			"name": "Checkvist - 2",
+			"regex": "(?i)(?:checkvist).{0,40}\\b([0-9a-zA-Z]{14})\\b"
+		},
+		{
+			"name": "Securitytrails",
+			"regex": "(?i)(?:securitytrails).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Zipcodeapi",
+			"regex": "(?i)(?:zipcodeapi).{0,40}\\b([a-zA-Z0-9]{64})\\b"
+		},
+		{
+			"name": "Gitter",
+			"regex": "(?i)(?:gitter).{0,40}\\b([a-z0-9-]{40})\\b"
+		},
+		{
+			"name": "Blazemeter",
+			"regex": "(?i)(?:blazemeter|runscope).{0,40}\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+		},
+		{
+			"name": "Squarespace",
+			"regex": "(?i)(?:squarespace).{0,40}\\b([0-9Aa-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+		},
+		{
+			"name": "Detectlanguage",
+			"regex": "(?i)(?:detectlanguage).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Mailsac",
+			"regex": "(?i)(?:mailsac).{0,40}\\b(k_[0-9A-Za-z]{36,})\\b"
+		},
+		{
+			"name": "Countrylayer",
+			"regex": "(?i)(?:countrylayer).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Signalwire - 1",
+			"regex": "\\b([0-9a-z-]{3,64}.signalwire.com)\\b"
+		},
+		{
+			"name": "Signalwire - 2",
+			"regex": "(?i)(?:signalwire).{0,40}\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+		},
+		{
+			"name": "Signalwire - 3",
+			"regex": "(?i)(?:signalwire).{0,40}\\b([0-9A-Za-z]{50})\\b"
+		},
+		{
+			"name": "Tmetric",
+			"regex": "(?i)(?:tmetric).{0,40}\\b([0-9A-Z]{64})\\b"
+		},
+		{
+			"name": "Zenserp",
+			"regex": "(?i)(?:zenserp).{0,40}\\b([0-9a-z-]{36})\\b"
+		},
+		{
+			"name": "Nylas",
+			"regex": "(?i)(?:nylas).{0,40}\\b([0-9A-Za-z]{30})\\b"
+		},
+		{
+			"name": "Protocolsio",
+			"regex": "(?i)(?:protocols).{0,40}\\b([a-z0-9]{64})\\b"
+		},
+		{
+			"name": "Serphouse",
+			"regex": "(?i)(?:serphouse).{0,40}\\b([0-9A-Za-z]{60})\\b"
+		},
+		{
+			"name": "Technicalanalysisapi",
+			"regex": "(?i)(?:technicalanalysisapi).{0,40}\\b([A-Z0-9]{48})\\b"
+		},
+		{
+			"name": "Codacy",
+			"regex": "(?i)(?:codacy).{0,40}\\b([0-9A-Za-z]{20})\\b"
+		},
+		{
+			"name": "Captaindata - 1",
+			"regex": "(?i)(?:captaindata).{0,40}\\b([0-9a-f]{8}\\-[0-9a-f]{4}\\-[0-9a-f]{4}\\-[0-9a-f]{4}\\-[0-9a-f]{12})\\b"
+		},
+		{
+			"name": "Captaindata - 2",
+			"regex": "(?i)(?:captaindata).{0,40}\\b([0-9a-f]{64})\\b"
+		},
+		{
+			"name": "Formio",
+			"regex": "(?i)(?:formio).{0,40}\\b(eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\\.[0-9A-Za-z]{310}\\.[0-9A-Z-a-z\\-_]{43}[ \\r\\n]{1})"
+		},
+		{
+			"name": "Jdbc",
+			"regex": "(?i)jdbc:[\\w]{3,10}:\\/\\/\\w[\\s\\S]{0,512}?password[=: \\\"']+(?P<pass>[^<{($]*?)[ \\s'\\\"]+"
+		},
+		{
+			"name": "Oopspam",
+			"regex": "(?i)(?:oopspam).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+		},
+		{
+			"name": "Teamworkdesk",
+			"regex": "(?i)(?:teamwork|teamworkdesk).{0,40}\\b(tkn\\.v1_[0-9A-Za-z]{71}=[ \\r\\n]{1})"
+		},
+		{
+			"name": "Harvest - 1",
+			"regex": "(?i)(?:harvest).{0,40}\\b([a-z0-9A-Z._]{97})\\b"
+		},
+		{
+			"name": "Harvest - 2",
+			"regex": "(?i)(?:harvest).{0,40}\\b([0-9]{4,9})\\b"
+		},
+		{
+			"name": "Anypoint - 1",
+			"regex": "(?i)(?:org).{0,40}\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+		},
+		{
+			"name": "Anypoint - 2",
+			"regex": "\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+		},
+		{
+			"name": "Tomtom",
+			"regex": "(?i)(?:tomtom).{0,40}\\b([0-9Aa-zA-Z]{32})\\b"
+		},
+		{
+			"name": "Geocodio - 1",
+			"regex": "(?i)(?:geocod).{0,40}\\b([a-zA-Z0-9\\S]{7,30})\\b"
+		},
+		{
+			"name": "Geocodio - 2",
+			"regex": "(?i)(?:geocod).{0,40}\\b([a-z0-9]{39})\\b"
+		},
+		{
+			"name": "Zipbooks - 1",
+			"regex": "(?i)(?:zipbooks|password).{0,40}\\b([a-zA-Z0-9!=@#$%^]{8,})"
+		},
+		{
+			"name": "Droneci",
+			"regex": "(?i)(?:droneci).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+		},
+		{
+			"name": "Cloudflareglobalapikey - 1",
+			"regex": "\\b([a-zA-Z0-9+._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9_-]+)\\b"
+		},
+		{
+			"name": "Cloudflareglobalapikey - 2",
+			"regex": "(?i)(?:cloudflare).{0,40}([A-Za-z0-9_-]{37})"
+		},
+		{
+			"name": "Cloudflareglobalapikey - 3",
+			"regex": "^[a-zA-Z0-9.!#$%&'*+\\\\/=?^_'''{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+		},
+		{
+			"name": "Mixmax",
+			"regex": "(?i)(?:mixmax).{0,40}\\b([a-zA-Z0-9_-]{36})\\b"
+		},
+		{
+			"name": "Cloudplan",
+			"regex": "(?i)(?:cloudplan).{0,40}\\b([A-Z0-9-]{32})\\b"
+		},
+		{
+			"name": "Mailerlite",
+			"regex": "(?i)(?:mailerlite).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Holidayapi",
+			"regex": "(?i)(?:holidayapi).{0,40}\\b([a-z0-9-]{36})\\b"
+		},
+		{
+			"name": "Cexio - 1",
+			"regex": "(?i)(?:cexio|cex.io).{0,40}\\b([a-z]{2}[0-9]{9})\\b"
+		},
+		{
+			"name": "Cexio - 2",
+			"regex": "(?i)(?:cexio|cex.io).{0,40}\\b([0-9A-Za-z]{24,27})\\b"
+		},
+		{
+			"name": "Debounce",
+			"regex": "(?i)(?:debounce).{0,40}\\b([a-zA-Z0-9]{13})\\b"
+		},
+		{
+			"name": "Dnscheck - 1",
+			"regex": "(?i)(?:dnscheck).{0,40}\\b([a-z0-9A-Z-]{36})\\b"
+		},
+		{
+			"name": "Dnscheck - 2",
+			"regex": "(?i)(?:dnscheck).{0,40}\\b([a-z0-9A-Z]{32})\\b"
+		},
+		{
+			"name": "Lessannoyingcrm",
+			"regex": "(?i)(?:less).{0,40}\\b([a-zA-Z0-9-]{57})\\b"
+		},
+		{
+			"name": "Fullstory",
+			"regex": "(?i)(?:fullstory).{0,40}\\b([a-zA-Z-0-9/+]{88})\\b"
+		},
+		{
+			"name": "Agora",
+			"regex": "(?i)(?:agora).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Terraformcloudpersonaltoken",
+			"regex": "\\b([A-Za-z0-9]{14}.atlasv1.[A-Za-z0-9]{67})\\b"
+		},
+		{
+			"name": "Hive - 1",
+			"regex": "(?i)(?:hive).{0,40}\\b([0-9a-z]{32})\\b"
+		},
+		{
+			"name": "Hive - 2",
+			"regex": "(?i)(?:hive).{0,40}\\b([0-9A-Za-z]{17})\\b"
+		},
+		{
+			"name": "Frameio",
+			"regex": "\\b(fio-u-[0-9a-zA-Z_-]{64})\\b"
+		},
+		{
+			"name": "Yandex",
+			"regex": "(?i)(?:yandex).{0,40}\\b([a-z0-9A-Z.]{83})\\b"
+		},
+		{
+			"name": "Readme",
+			"regex": "(?i)(?:readme).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+		},
+		{
+			"name": "Storychief",
+			"regex": "(?i)(?:storychief).{0,40}\\b([a-zA-Z0-9_\\-.]{940,1000})"
+		},
+		{
+			"name": "Checkout - 1",
+			"regex": "(?i)(?:checkout).{0,40}\\b((sk_|sk_test_)[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})\\b"
+		},
+		{
+			"name": "Checkout - 2",
+			"regex": "(?i)(?:checkout).{0,40}\\b(cus_[0-9a-zA-Z]{26})\\b"
+		},
+		{
+			"name": "Wrike",
+			"regex": "(?i)(?:wrike).{0,40}\\b(ey[a-zA-Z0-9-._]{333})\\b"
+		},
+		{
+			"name": "Sinchmessage",
+			"regex": "(?i)(?:sinch).{0,40}\\b([a-z0-9]{32})\\b"
+		},
+		{
+			"name": "Commercejs",
+			"regex": "(?i)(?:commercejs).{0,40}\\b([a-z0-9_]{48})\\b"
+		},
+		{
+			"name": "Fusebill",
+			"regex": "(?i)(?:fusebill).{0,40}\\b([a-zA-Z0-9]{88})\\b"
+		},
+		{
+			"name": "Hypertrack - 1",
+			"regex": "(?i)(?:hypertrack).{0,40}\\b([0-9a-zA-Z\\_\\-]{54})\\b"
+		},
+		{
+			"name": "Hypertrack - 2",
+			"regex": "(?i)(?:hypertrack).{0,40}\\b([0-9a-zA-Z\\_\\-]{27})\\b"
+		},
+		{
+			"name": "AWS API Gateway",
+			"regex": "[0-9a-z]+.execute-api.[0-9a-z.-_]+.amazonaws.com"
+		},
+		{
+			"name": "AWS ARN",
+			"regex": "arn:aws:[a-z0-9-]+:[a-z]{2}-[a-z]+-[0-9]+:[0-9]+:.+"
+		},
+		{
+			"name": "AWS Client ID",
+			"regex": "(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"
+		},
+		{
+			"name": "AWS CloudFront",
+			"regex": "[0-9a-z.-_]+.cloudfront.net"
+		},
+		{
+			"name": "AWS EC2 External",
+			"regex": "ec2-[0-9a-z.-_]+.compute(-1)?.amazonaws.com"
+		},
+		{
+			"name": "AWS EC2 Internal",
+			"regex": "[0-9a-z.-_]+.compute(-1)?.internal"
+		},
+		{
+			"name": "AWS ELB 1",
+			"regex": "[0-9a-z.-_]+.elb.[0-9a-z.-_]+.amazonaws.com"
+		},
+		{
+			"name": "AWS ELB 2",
+			"regex": "[0-9a-z.-_]+.elb.amazonaws.com"
+		},
+		{
+			"name": "AWS ElasticCache",
+			"regex": "[0-9a-z.-_]+.cache.amazonaws.com"
+		},
+		{
+			"name": "AWS MWS key",
+			"regex": "amzn.mws.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+		},
+		{
+			"name": "AWS RDS",
+			"regex": "[0-9a-z.-_]+.rds.amazonaws.com"
+		},
+		{
+			"name": "AWS S3 Bucket",
+			"regex": "s3://[0-9a-z.-_/]+"
+		},
+		{
+			"name": "AWS S3 Endpoint",
+			"regex": "[0-9a-z.-_]+.s3-website[0-9a-z.-_]+.amazonaws.com"
+		},
+		{
+			"name": "AWS Secret Key",
+			"regex": "aws(.{0,20})?['\"][0-9a-z/+]{40}['\"]"
+		},
+		{
+			"name": "Braintree API Key",
+			"regex": "access_token$production$[0-9a-z]{16}$[0-9a-f]{32}"
+		},
+		{
+			"name": "FCM_server_key",
+			"regex": "(?i)(AAAA[a-zA-Z0-9_-]{7}:[a-zA-Z0-9_-]{140})"
+		},
+		{
+			"name": "Facebook Access Token",
+			"regex": "EAACEdEose0cBA[0-9a-z]+"
+		},
+		{
+			"name": "GitHub Token",
+			"regex": "(ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9_]{36}"
+		},
+		{
+			"name": "Google API Key",
+			"regex": "AIza[0-9a-z-_]{35}"
+		},
+		{
+			"name": "Google Cloud Platform API key",
+			"regex": "(google|gcp|youtube|drive|yt)(.{0,20})?['\"][AIza[0-9a-z-_]{35}]['\"]"
+		},
+		{
+			"name": "Google Oauth ID",
+			"regex": "[0-9]+-[0-9a-z_]{32}.apps.googleusercontent.com"
+		},
+		{
+			"name": "Mailgun API Key 1",
+			"regex": "key-[0-9a-z]{32}"
+		},
+		{
+			"name": "PGP Public Key",
+			"regex": "-----BEGIN PGP PUBLIC KEY BLOCK-----[\\s\\S]*?-----END PGP PUBLIC KEY BLOCK-----$"
+		},
+		{
+			"name": "PGP Private Key",
+			"regex": "-----BEGIN PGP PRIVATE KEY BLOCK-----[\\s\\S]*?-----END PGP PRIVATE KEY BLOCK-----"
+		},
+		{
+			"name": "PEM",
+			"regex": "/(-----BEGIN PUBLIC KEY-----(\n|\r|\r\n)([0-9a-zA-Z\\+\/=]{64}(\n|\r|\r\n))*([0-9a-zA-Z\\+\/=]{1,63}(\n|\r|\r\n))?-----END PUBLIC KEY-----)|(-----BEGIN PRIVATE KEY-----(\n|\r|\r\n)([0-9a-zA-Z\\+\/=]{64}(\n|\r|\r\n))*([0-9a-zA-Z\\+\/=]{1,63}(\n|\r|\r\n))?-----END PRIVATE KEY-----)/gm"
+		},
+		{
+			"name": "RKCS8",
+			"regex": "-----BEGIN PRIVATE KEY-----"
+		},
+		{
+			"name": "RSA",
+			"regex": "-----BEGIN RSA PRIVATE KEY-----[\\s\\S]*?-----END RSA PRIVATE KEY-----"
+		},
+		{
+			"name": "SSH",
+			"regex": "-----BEGIN OPENSSH PRIVATE KEY-----"
+		},
+		{
+			"name": "Slack Token",
+			"regex": "xox[baprs]-([0-9a-z-]{10,48})"
+		},
+		{
+			"name": "Square API Key",
+			"regex": "sq0(atp|csp)-[0-9a-z-_]{22,43}"
+		},
+		{
+			"name": "Stripe Public Live Key",
+			"regex": "pk_live_[0-9a-z]{24}"
+		},
+		{
+			"name": "Stripe Public Test Key",
+			"regex": "pk_test_[0-9a-z]{24}"
+		},
+		{
+			"name": "Stripe Secret Live Key",
+			"regex": "(sk|rk)_live_[0-9a-z]{24}"
+		},
+		{
+			"name": "Stripe Secret Test Key",
+			"regex": "(sk|rk)_test_[0-9a-z]{24}"
+		},
+		{
+			"name": "Telegram Secret",
+			"regex": "d{5,}:A[0-9a-z_-]{34,34}"
+		},
+		{
+			"name": "Trello URL",
+			"regex": "https://trello.com/b/[0-9a-z]/[0-9a-z_-]+"
+		},
+		{
+			"name": "Twilio API Key",
+			"regex": "SK[0-9a-fA-F]{32}"
+		},
+		{
+			"name": "artifactory",
+			"regex": "(artifactory.{0,50}(\"|')?[a-zA-Z0-9=]{112}(\"|')?)"
+		},
+		{
+			"name": "aws_access_key_id 2",
+			"regex": "(?:A3T|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[a-zA-Z0-9-_]{12,}"
+		},
+		{
+			"name": "azure_blob",
+			"regex": "(http(?:s)://.[^><'\" \n)]+.blob.core.windows.net/.[^><'\" \n/)]+./)"
+		},
+		{
+			"name": "Clojars API token",
+			"regex": "(?i)(CLOJARS_)[a-z0-9]{60}"
+		},
+		{
+			"name": "digitalocean_space",
+			"regex": "(http(?:s)://[^><.'\" \n)]+.[^><.'\" \n)]+.[^><.'\" \n)]+.digitaloceanspaces.com)"
+		},
+		{
+			"name": "domain",
+			"regex": "http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*(),]|(?:%[0-9a-fA-F][0-9a-fA-F]))[^><'\" \n)]+"
+		},
+		{
+			"name": "facebook_secret_key",
+			"regex": "(facebook|fb)(.{0,20})?(?-i)['\"][0-9a-f]{32}['\"]"
+		},
+		{
+			"name": "github_access_token 2",
+			"regex": "[a-zA-Z0-9_-]*:[a-zA-Z0-9_-]+@github.com*"
+		},
+		{
+			"name": "google_captcha",
+			"regex": "(6L[0-9A-Za-z-_]{38})"
+		},
+		{
+			"name": "google_oauth",
+			"regex": "(ya29.[0-9A-Za-z-_]+)"
+		},
+		{
+			"name": "google_patterns",
+			"regex": "(?i)(?:google_client_id|google_client_secret|google_client_token)"
+		},
+		{
+			"name": "google_url",
+			"regex": "([0-9]{12}-[a-z0-9]{32}.apps.googleusercontent.com)"
+		},
+		{
+			"name": "heroku_api_key_api_key",
+			"regex": "([h|H][e|E][r|R][o|O][k|K][u|U].{0,30}[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12})"
+		},
+		{
+			"name": "hockeyapp",
+			"regex": "hockey.{0,50}(\"|')?[0-9a-f]{32}(\"|')?"
+		},
+		{
+			"name": "json_web1_token",
+			"regex": "(eyJ[a-zA-Z0-9-]{10,}.eyJ[a-zA-Z0-9-]{10,}.[a-zA-Z0-9-]{10,})"
+		},
+		{
+			"name": "linkedin_client_id",
+			"regex": "(linkedin(.{0,20})?(?-i)['\"][0-9a-z]{12}['\"])"
+		},
+		{
+			"name": "linkedin_secret_key",
+			"regex": "(linkedin(.{0,20})?['\"][0-9a-z]{16}['\"])"
+		},
+		{
+			"name": "mailchimp",
+			"regex": "(W(?:[a-f0-9]{32}(-us[0-9]{1,2}))a-zA-Z0-9)"
+		},
+		{
+			"name": "mailgun 2",
+			"regex": "(key-[0-9a-f]{32})"
+		},
+		{
+			"name": "mailgun_api_key 1",
+			"regex": "key-[0-9a-zA-Z]{32}"
+		},
+		{
+			"name": "npm_token 2",
+			"regex": "([a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12})"
+		},
+		{
+			"name": "outlook_team",
+			"regex": "(https://outlook.office.com/webhook/[0-9a-f-]{36}@)"
+		},
+		{
+			"name": "paypal",
+			"regex": "[a-zA-Z0-9]{1,2}([E][A-Z]{1}[a-zA-Z0-9_-]{78})[a-zA-Z0-9]{1,2}$"
+		},
+		{
+			"name": "paypal_braintree_access_token",
+			"regex": "(access_token$production$[0-9a-z]{16}$[0-9a-f]{32})"
+		},
+		{
+			"name": "slack_api_token",
+			"regex": "(xox[aboprs]-([0-9a-zA-Z-]{8,})?)"
+		},
+		{
+			"name": "slack_webhook_url",
+			"regex": "(hooks.slack.com/services/T[A-Z0-9]{8}/B[A-Z0-9]{8}/[a-zA-Z0-9]{1,})"
+		},
+		{
+			"name": "sonarqube_docs_api_key",
+			"regex": "(sonar.{0,50}(\"|')?[0-9a-f]{40}(\"|')?)"
+		},
+		{
+			"name": "square_app_secret",
+			"regex": "(sq0[a-z]{3}-[0-9A-Za-z-_]{20,50})"
+		},
+		{
+			"name": "square_reader_sdk_repository_password",
+			"regex": "square[_-]?reader[_-]?sdk[_-]?repository[_-]?password(=| =|:| :)"
+		},
+		{
+			"name": "srcclr_api_token",
+			"regex": "srcclr[_-]?api[_-]?token(=| =|:| :)"
+		},
+		{
+			"name": "ssh_password",
+			"regex": "(sshpass -p.*['|\"])"
+		},
+		{
+			"name": "stripe_restricted_api",
+			"regex": "(rk_live_[0-9a-zA-Z]{24,34})"
+		},
+		{
+			"name": "stripe_standard_api",
+			"regex": "(sk_live_[0-9a-zA-Z]{24,34})"
+		},
+		{
+			"name": "tesco_api_key",
+			"regex": "tesco[_-]?api[_-]?key(=| =|:| :)"
+		},
+		{
+			"name": "twitter",
+			"regex": "([a-zA-Z0-9]{1,2}([a-zA-Z0-9]{50})[a-zA-Z0-9]{1,2}$)"
+		},
+		{
+			"name": "twitter_client_id",
+			"regex": "(twitter(.{0,20})?['\"][0-9a-z]{18,25}['\"])"
+		},
+		{
+			"name": "twitter_consumer_key",
+			"regex": "twitter[_-]?consumer[_-]?key(=| =|:| :)"
+		},
+		{
+			"name": "twitter_consumer_secret",
+			"regex": "twitter[_-]?consumer[_-]?secret(=| =|:| :)"
+		},
+		{
+			"name": "twitteroauthaccesssecret",
+			"regex": "twitteroauthaccesssecret(=| =|:| :)"
+		},
+		{
+			"name": "twitteroauthaccesstoken",
+			"regex": "twitteroauthaccesstoken(=| =|:| :)"
+		},
+		{
+			"name": "unity_password",
+			"regex": "unity[_-]?password(=| =|:| :)"
+		},
+		{
+			"name": "unity_serial",
+			"regex": "unity[_-]?serial(=| =|:| :)"
+		},
+		{
+			"name": "urban_key",
+			"regex": "urban[_-]?key(=| =|:| :)"
+		},
+		{
+			"name": "urban_master_secret",
+			"regex": "urban[_-]?master[_-]?secret(=| =|:| :)"
+		},
+		{
+			"name": "urban_secret",
+			"regex": "urban[_-]?secret(=| =|:| :)"
+		},
+		{
+			"name": "us_east_1_elb_amazonaws_com",
+			"regex": "us[_-]?east[_-]?1[_-]?elb[_-]?amazonaws[_-]?com(=| =|:| :)"
+		},
+		{
+			"name": "use_ssh",
+			"regex": "use[_-]?ssh(=| =|:| :)"
+		},
+		{
+			"name": "user_assets_access_key_id",
+			"regex": "user[_-]?assets[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+		},
+		{
+			"name": "user_assets_secret_access_key",
+			"regex": "user[_-]?assets[_-]?secret[_-]?access[_-]?key(=| =|:| :)"
+		},
+		{
+			"name": "usertravis",
+			"regex": "usertravis(=| =|:| :)"
+		},
+		{
+			"name": "v_sfdc_client_secret",
+			"regex": "v[_-]?sfdc[_-]?client[_-]?secret(=| =|:| :)"
+		},
+		{
+			"name": "v_sfdc_password",
+			"regex": "v[_-]?sfdc[_-]?password(=| =|:| :)"
+		},
+		{
+			"name": "vip_github_build_repo_deploy_key",
+			"regex": "vip[_-]?github[_-]?build[_-]?repo[_-]?deploy[_-]?key(=| =|:| :)"
+		},
+		{
+			"name": "vip_github_deploy_key",
+			"regex": "vip[_-]?github[_-]?deploy[_-]?key(=| =|:| :)"
+		},
+		{
+			"name": "vip_github_deploy_key_pass",
+			"regex": "vip[_-]?github[_-]?deploy[_-]?key[_-]?pass(=| =|:| :)"
+		},
+		{
+			"name": "virustotal_apikey",
+			"regex": "virustotal[_-]?apikey(=| =|:| :)"
+		},
+		{
+			"name": "visual_recognition_api_key",
+			"regex": "visual[_-]?recognition[_-]?api[_-]?key(=| =|:| :)"
+		},
+		{
+			"name": "vscetoken",
+			"regex": "vscetoken(=| =|:| :)"
+		},
+		{
+			"name": "wakatime_api_key",
+			"regex": "wakatime[_-]?api[_-]?key(=| =|:| :)"
+		},
+		{
+			"name": "watson_conversation_password",
+			"regex": "watson[_-]?conversation[_-]?password(=| =|:| :)"
+		},
+		{
+			"name": "watson_device_password",
+			"regex": "watson[_-]?device[_-]?password(=| =|:| :)"
+		},
+		{
+			"name": "watson_password",
+			"regex": "watson[_-]?password(=| =|:| :)"
+		},
+		{
+			"name": "widget_basic_password",
+			"regex": "widget[_-]?basic[_-]?password(=| =|:| :)"
+		},
+		{
+			"name": "widget_basic_password_2",
+			"regex": "widget[_-]?basic[_-]?password[_-]?2(=| =|:| :)"
+		},
+		{
+			"name": "widget_basic_password_3",
+			"regex": "widget[_-]?basic[_-]?password[_-]?3(=| =|:| :)"
+		},
+		{
+			"name": "widget_basic_password_4",
+			"regex": "widget[_-]?basic[_-]?password[_-]?4(=| =|:| :)"
+		},
+		{
+			"name": "widget_basic_password_5",
+			"regex": "widget[_-]?basic[_-]?password[_-]?5(=| =|:| :)"
+		},
+		{
+			"name": "widget_fb_password",
+			"regex": "widget[_-]?fb[_-]?password(=| =|:| :)"
+		},
+		{
+			"name": "widget_fb_password_2",
+			"regex": "widget[_-]?fb[_-]?password[_-]?2(=| =|:| :)"
+		},
+		{
+			"name": "widget_fb_password_3",
+			"regex": "widget[_-]?fb[_-]?password[_-]?3(=| =|:| :)"
+		},
+		{
+			"name": "widget_test_server",
+			"regex": "widget[_-]?test[_-]?server(=| =|:| :)"
+		},
+		{
+			"name": "wincert_password",
+			"regex": "wincert[_-]?password(=| =|:| :)"
+		},
+		{
+			"name": "wordpress_db_password",
+			"regex": "wordpress[_-]?db[_-]?password(=| =|:| :)"
+		},
+		{
+			"name": "wordpress_db_user",
+			"regex": "wordpress[_-]?db[_-]?user(=| =|:| :)"
+		},
+		{
+			"name": "wpjm_phpunit_google_geocode_api_key",
+			"regex": "wpjm[_-]?phpunit[_-]?google[_-]?geocode[_-]?api[_-]?key(=| =|:| :)"
+		},
+		{
+			"name": "wporg_password",
+			"regex": "wporg[_-]?password(=| =|:| :)"
+		},
+		{
+			"name": "wpt_db_password",
+			"regex": "wpt[_-]?db[_-]?password(=| =|:| :)"
+		},
+		{
+			"name": "wpt_db_user",
+			"regex": "wpt[_-]?db[_-]?user(=| =|:| :)"
+		},
+		{
+			"name": "wpt_prepare_dir",
+			"regex": "wpt[_-]?prepare[_-]?dir(=| =|:| :)"
+		},
+		{
+			"name": "wpt_report_api_key",
+			"regex": "wpt[_-]?report[_-]?api[_-]?key(=| =|:| :)"
+		},
+		{
+			"name": "wpt_ssh_connect",
+			"regex": "wpt[_-]?ssh[_-]?connect(=| =|:| :)"
+		},
+		{
+			"name": "wpt_ssh_private_key_base64",
+			"regex": "wpt[_-]?ssh[_-]?private[_-]?key[_-]?base64(=| =|:| :)"
+		},
+		{
+			"name": "www_googleapis_com",
+			"regex": "www[_-]?googleapis[_-]?com(=| =|:| :)"
+		},
+		{
+			"name": "yangshun_gh_password",
+			"regex": "yangshun[_-]?gh[_-]?password(=| =|:| :)"
+		},
+		{
+			"name": "yangshun_gh_token",
+			"regex": "yangshun[_-]?gh[_-]?token(=| =|:| :)"
+		},
+		{
+			"name": "yt_account_client_secret",
+			"regex": "yt[_-]?account[_-]?client[_-]?secret(=| =|:| :)"
+		},
+		{
+			"name": "yt_account_refresh_token",
+			"regex": "yt[_-]?account[_-]?refresh[_-]?token(=| =|:| :)"
+		},
+		{
+			"name": "yt_api_key",
+			"regex": "yt[_-]?api[_-]?key(=| =|:| :)"
+		},
+		{
+			"name": "yt_client_secret",
+			"regex": "yt[_-]?client[_-]?secret(=| =|:| :)"
+		},
+		{
+			"name": "yt_partner_client_secret",
+			"regex": "yt[_-]?partner[_-]?client[_-]?secret(=| =|:| :)"
+		},
+		{
+			"name": "yt_partner_refresh_token",
+			"regex": "yt[_-]?partner[_-]?refresh[_-]?token(=| =|:| :)"
+		},
+		{
+			"name": "yt_server_api_key",
+			"regex": "yt[_-]?server[_-]?api[_-]?key(=| =|:| :)"
+		},
+		{
+			"name": "zendesk_travis_github",
+			"regex": "zendesk[_-]?travis[_-]?github(=| =|:| :)"
+		},
+		{
+			"name": "zensonatypepassword",
+			"regex": "zensonatypepassword(=| =|:| :)"
+		},
+		{
+			"name": "zhuliang_gh_token",
+			"regex": "zhuliang[_-]?gh[_-]?token(=| =|:| :)"
+		},
+		{
+			"name": "zopim_account_key",
+			"regex": "zopim[_-]?account[_-]?key(=| =|:| :)"
+		},
+		{
+			"name": "Generic - 1376",
+			"regex": "jdbc:mysql(=| =|:| :)"
+		},
+		{
+			"name": "Generic - 1688",
+			"regex": "TOKEN[\\\\-|_|A-Z0-9]*(\\'|\\\")?(:|=)(\\'|\\\")?[\\\\-|_|A-Z0-9]{10}"
+		},
+		{
+			"name": "Generic - 1689",
+			"regex": "API[\\\\-|_|A-Z0-9]*(\\'|\\\")?(:|=)(\\'|\\\")?[\\\\-|_|A-Z0-9]{10}"
+		},
+		{
+			"name": "Generic - 1690",
+			"regex": "KEY[\\\\-|_|A-Z0-9]*(\\'|\\\")?(:|=)(\\'|\\\")?[\\\\-|_|A-Z0-9]{10}"
+		},
+		{
+			"name": "Generic - 1691",
+			"regex": "SECRET[\\\\-|_|A-Z0-9]*(\\'|\\\")?(:|=)(\\'|\\\")?[\\\\-|_|A-Z0-9]{10}"
+		},
+		{
+			"name": "Generic - 1692",
+			"regex": "AUTHORIZATION[\\\\-|_|A-Z0-9]*(\\'|\\\")?(:|=)(\\'|\\\")?[\\\\-|_|A-Z0-9]{10}"
+		},
+		{
+			"name": "Generic - 1693",
+			"regex": "PASSWORD[\\\\-|_|A-Z0-9]*(\\'|\\\")?(:|=)(\\'|\\\")?[\\\\-|_|A-Z0-9]{10}"
+		},
+		{
+			"name": "Generic - 1694",
+			"regex": "(T|t)(O|o)(K|k)(E|e)(N|n)[\\-|_|A-Za-z0-9]*(\\''|\")?( )*(:|=)+()*(\\''|\")?[ 0-9A-Za-z\\-_]+(\\''|\")?"
+		},
+		{
+			"name": "Generic - 1695",
+			"regex": "(A|a)(P|p)(Ii)[\\-|_|A-Za-z0-9]*(\\''|\")?( )*(:|=)( )*(\\''|\")?[0-9A-Za-z\\-_]+(\\''|\")?"
+		},
+		{
+			"name": "Generic - 1696",
+			"regex": "(K|k)(E|e)(Y|y)[\\-|_|A-Za-z0-9]*(\\''|\")?( )*(:|=)( )*(\\''|\")?[0-9A-Za-z\\-_]+(\\''|\")?"
+		},
+		{
+			"name": "Generic - 1697",
+			"regex": "(S|s)(E|e)(C|c)(R|r)(E|e)(T|t)[\\-|_|A-Za-z0-9]*(\\''|\")?( )*(:|=)()*(\\''|\")?[ 0-9A-Za-z\\-_]+(\\''|\")?"
+		},
+		{
+			"name": "Generic - 1698",
+			"regex": "(A|a)(U|u)(T|t)(H|h)(O|o)(R|r)(I|i)(Z|z)(A|a)(T|t)(I|i)(O|o)(N|n)[\\-|_|A-Za-z0-9]*(\\''|\")?()*(:|=)( )*(\\''|\")?[ 0-9A-Za-z\\-_]+(\\''|\")?"
+		},
+		{
+			"name": "Generic - 1699",
+			"regex": "(P|p)(A|a)(S|s)(S|s)(W|w)(O|o)(R|r)(D|d)[\\-|_|A-Za-z0-9]*(\\''|\")?()*(:|=)( )*(\\''|\")?[ 0-9A-Za-z\\-_]+(\\''|\")?"
+		},
+		{
+			"name": "Generic - 1700",
+			"regex": "BEGIN OPENSSH PRIVATE KEY"
+		},
+		{
+			"name": "Generic - 1701",
+			"regex": "BEGIN PRIVATE KEY"
+		},
+		{
+			"name": "Generic - 1702",
+			"regex": "BEGIN RSA PRIVATE KEY"
+		},
+		{
+			"name": "Generic - 1703",
+			"regex": "BEGIN DSA PRIVATE KEY"
+		},
+		{
+			"name": "Generic - 1704",
+			"regex": "BEGIN EC PRIVATE KEY"
+		},
+		{
+			"name": "Generic - 1705",
+			"regex": "BEGIN PGP PRIVATE KEY BLOCK"
+		},
+		{
+			"name": "Generic - 1706 - 1",
+			"regex": "ssh-rsa"
+		},
+		{
+			"name": "Generic - 1706 - 2",
+			"regex": "[a-z0-9.-]+\\.s3\\.amazonaws\\.com"
+		},
+		{
+			"name": "Generic - 1707",
+			"regex": "[a-z0-9.-]+\\.s3-[a-z0-9-]\\.amazonaws\\.com"
+		},
+		{
+			"name": "Generic - 1708",
+			"regex": "[a-z0-9.-]+\\.s3-website[.-](eu|ap|us|ca|sa|cn)"
+		},
+		{
+			"name": "Generic - 1709",
+			"regex": "s3\\.amazonaws\\.com/[a-z0-9._-]+"
+		},
+		{
+			"name": "Generic - 1710 - 1",
+			"regex": "s3-[a-z0-9-]+\\.amazonaws\\.com/[a-z0-9._-]+"
+		},
+		{
+			"name": "Generic - 1710 - 2",
+			"regex": "algolia_api_key"
+		},
+		{
+			"name": "Generic - 1711",
+			"regex": "asana_access_token"
+		},
+		{
+			"name": "Generic - 1712",
+			"regex": "aws_secret"
+		},
+		{
+			"name": "Generic - 1713",
+			"regex": "azure_tenant"
+		},
+		{
+			"name": "Generic - 1714",
+			"regex": "bitly_access_token"
+		},
+		{
+			"name": "Generic - 1715",
+			"regex": "branchio_secret"
+		},
+		{
+			"name": "Generic - 1716",
+			"regex": "browserstack_access_key"
+		},
+		{
+			"name": "Generic - 1717",
+			"regex": "buildkite_access_token"
+		},
+		{
+			"name": "Generic - 1718",
+			"regex": "comcast_access_token"
+		},
+		{
+			"name": "Generic - 1719",
+			"regex": "datadog_api_key"
+		},
+		{
+			"name": "Generic - 1720",
+			"regex": "deviantart_secret"
+		},
+		{
+			"name": "Generic - 1721",
+			"regex": "deviantart_access_token"
+		},
+		{
+			"name": "Generic - 1722",
+			"regex": "dropbox_api_token"
+		},
+		{
+			"name": "Generic - 1723",
+			"regex": "facebook_appsecret"
+		},
+		{
+			"name": "Generic - 1724",
+			"regex": "facebook_access_token"
+		},
+		{
+			"name": "Generic - 1725",
+			"regex": "firebase_custom_token"
+		},
+		{
+			"name": "Generic - 1726",
+			"regex": "firebase_id_token"
+		},
+		{
+			"name": "Generic - 1727",
+			"regex": "github_client"
+		},
+		{
+			"name": "Generic - 1728",
+			"regex": "github_ssh_key"
+		},
+		{
+			"name": "Generic - 1729",
+			"regex": "github_token"
+		},
+		{
+			"name": "Generic - 1730",
+			"regex": "gitlab_private_token"
+		},
+		{
+			"name": "Generic - 1731",
+			"regex": "google_cm"
+		},
+		{
+			"name": "Generic - 1732",
+			"regex": "google_maps_key"
+		},
+		{
+			"name": "Generic - 1733",
+			"regex": "heroku_api_key"
+		},
+		{
+			"name": "Generic - 1734",
+			"regex": "instagram_access_token"
+		},
+		{
+			"name": "Generic - 1735",
+			"regex": "mailchimp_api_key"
+		},
+		{
+			"name": "Generic - 1736",
+			"regex": "mailgun_api_key"
+		},
+		{
+			"name": "Generic - 1737",
+			"regex": "mailjet"
+		},
+		{
+			"name": "Generic - 1738",
+			"regex": "mapbox_access_token"
+		},
+		{
+			"name": "Generic - 1739",
+			"regex": "pagerduty_api_token"
+		},
+		{
+			"name": "Generic - 1740",
+			"regex": "paypal_key_sb"
+		},
+		{
+			"name": "Generic - 1741",
+			"regex": "paypal_key_live"
+		},
+		{
+			"name": "Generic - 1742",
+			"regex": "paypal_token_sb"
+		},
+		{
+			"name": "Generic - 1743",
+			"regex": "paypal_token_live"
+		},
+		{
+			"name": "Generic - 1744",
+			"regex": "pendo_integration_key"
+		},
+		{
+			"name": "Generic - 1745",
+			"regex": "salesforce_access_token"
+		},
+		{
+			"name": "Salesforce Access Token",
+			"regex": "^[a-zA-Z0-9]{104}$"
+		},
+		{
+			"name": "Salesforce Client Secret",
+			"regex": "^[a-zA-Z0-9]{15,25}$"
+		},
+		{
+			"name": "Captcha Token",
+			"regex": "^6[0-9a-zA-Z_-]{39}$"
+		},
+		{
+			"name": "Generic - 1746",
+			"regex": "saucelabs_ukey"
+		},
+		{
+			"name": "Generic - 1747",
+			"regex": "sendgrid_api_key"
+		},
+		{
+			"name": "Generic - 1748",
+			"regex": "slack_api_token"
+		},
+		{
+			"name": "Generic - 1749",
+			"regex": "slack_webhook"
+		},
+		{
+			"name": "Generic - 1750",
+			"regex": "square_secret"
+		},
+		{
+			"name": "Generic - 1751",
+			"regex": "square_auth_token"
+		},
+		{
+			"name": "Generic - 1752",
+			"regex": "travisci_api_token"
+		},
+		{
+			"name": "Generic - 1753",
+			"regex": "twilio_sid_token"
+		},
+		{
+			"name": "Generic - 1754",
+			"regex": "twitter_api_secret"
+		},
+		{
+			"name": "Generic - 1755",
+			"regex": "twitter_bearer_token"
+		},
+		{
+			"name": "Generic - 1756",
+			"regex": "spotify_access_token"
+		},
+		{
+			"name": "Generic - 1757",
+			"regex": "stripe_key_live"
+		},
+		{
+			"name": "Generic - 1758",
+			"regex": "wakatime_api_key"
+		},
+		{
+			"name": "Generic - 1759",
+			"regex": "wompi_auth_bearer_sb"
+		},
+		{
+			"name": "Generic - 1760",
+			"regex": "wompi_auth_bearer_live"
+		},
+		{
+			"name": "Generic - 1761",
+			"regex": "wpengine_api_key"
+		},
+		{
+			"name": "Generic - 1762",
+			"regex": "zapier_webhook"
+		},
+		{
+			"name": "Generic - 1763",
+			"regex": "zendesk_access_token"
+		},
+		{
+			"name": "Amazon SNS Topic Disclosure",
+			"regex": "arn:aws:sns:[a-z0-9\\-]+:[0-9]+:[A-Za-z0-9\\-_]+"
+		},
+		{
+			"name": "AWS Access Key ID Value",
+			"regex": "(A3T[A-Z0-9]|AKIA|AGPA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"
+		},
+		{
+			"name": "Artifactory Password Disclosure",
+			"regex": "(?:\\s|=|:|\"|^)AP[\\dABCDEF][a-zA-Z0-9]{8,}"
+		},
+		{
+			"name": "Artifactory API Token Disclosure",
+			"regex": "(?:\\s|=|:|\"|^)AKC[a-zA-Z0-9]{10,}"
+		},
+		{
+			"name": "Bitly Secret Key Disclosure",
+			"regex": "R_[0-9a-f]{32}"
+		},
+		{
+			"name": "Cloudinary Credentials Disclosure",
+			"regex": "cloudinary://[0-9]+:[A-Za-z0-9\\-_\\.]+@[A-Za-z0-9\\-_\\.]+"
+		},
+		{
+			"name": "Discord Webhook Disclosure",
+			"regex": "https://discordapp\\.com/api/webhooks/[0-9]+/[A-Za-z0-9\\-]+"
+		},
+		{
+			"name": "JDBC Connection String Disclosure",
+			"regex": "jdbc:[a-z:]+://[A-Za-z0-9\\.\\-_:;=/@?,&]+"
+		},
+		{
+			"name": "JWT Token",
+			"regex": "eyJ[a-zA-Z0-9]{10,}\\.eyJ[a-zA-Z0-9]{10,}\\.[a-zA-Z0-9_\\-]{10,}"
+		},
+		{
+			"name": "Shoppable Service Auth",
+			"regex": "data-shoppable-auth-token.+"
+		},
+		{
+			"name": "FCM Server Key",
+			"regex": "AAAA[a-zA-Z0-9_-]{7}:[a-zA-Z0-9_-]{140}"
+		},
+		{
+			"name": "Google Calendar URI",
+			"regex": "https://www\\.google\\.com/calendar/embed\\?src=[A-Za-z0-9%@&;=\\-_\\./]+"
+		},
+		{
+			"name": "Google OAuth Access Key",
+			"regex": "ya29\\.[0-9A-Za-z\\-_]+"
+		},
+		{
+			"name": "Microsoft Teams Webhook",
+			"regex": "https://outlook\\.office\\.com/webhook/[A-Za-z0-9\\-@]+/IncomingWebhook/[A-Za-z0-9\\-]+/[A-Za-z0-9\\-]+"
+		},
+		{
+			"name": "Newrelic Admin API Key",
+			"regex": "(?i)NRAA-[a-f0-9]{27}"
+		},
+		{
+			"name": "Newrelic Insights API Key",
+			"regex": "(?i)NRI(?:I|Q)-[A-Za-z0-9\\-_]{32}"
+		},
+		{
+			"name": "Newrelic REST API Key",
+			"regex": "(?i)NRRA-[a-f0-9]{42}"
+		},
+		{
+			"name": "Newrelic Synthetics Location Key",
+			"regex": "(?i)NRSP-[a-z]{2}[0-9]{2}[a-f0-9]{31}"
+		},
+		{
+			"name": "Sendgrid API Key 2",
+			"regex": "SG\\.[a-zA-Z0-9-_]{22}\\.[a-zA-Z0-9_-]{43}"
+		},
+		{
+			"name": "Slack access token",
+			"regex": "xoxb-[0-9A-Za-z\\-]{51}"
+		},
+		{
+			"name": "Slack User token disclosure",
+			"regex": "xoxp-[0-9A-Za-z\\-]{72}"
+		},
+		{
+			"name": "Slack Webhook",
+			"regex": "https://hooks\\.slack\\.com/services/T[a-zA-Z0-9_]{8}/B[a-zA-Z0-9_]{8}/[a-zA-Z0-9_]{24}"
+		},
+		{
+			"name": "SonarQube Token",
+			"regex": "sonar.{0,50}(?:\"|'|`)?[0-9a-f]{40}(?:\"|'|`)?"
+		},
+		{
+			"name": "Stripe Restriced Key",
+			"regex": "rk_(?:live|test)_[0-9a-zA-Z]{24}"
+		},
+		{
+			"name": "Stripe Secret Key",
+			"regex": "sk_(?:live|test)_[0-9a-zA-Z]{24}"
+		},
+		{
+			"name": "Zapier Webhook",
+			"regex": "https://(?:www.)?hooks\\.zapier\\.com/hooks/catch/[A-Za-z0-9]+/[A-Za-z0-9]+/"
+		},
+		{
+			"name": "Zoho Webhook",
+			"regex": "https://creator\\.zoho\\.com/api/[A-Za-z0-9/\\-_\\.]+\\?authtoken=[A-Za-z0-9]+"
+		},
+		{
+			"name": "AWS Cognito Pool ID",
+			"regex": ":[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}"
+		},
+		{
+			"name": "Basic Auth Credentials",
+			"regex": "[a-zA-Z]{3,10}://[^/\\s:@]{3,20}:[^/\\s:@]{3,20}@.{1,100}[\"'\\s]"
+		},
+		{
+			"name": "Facebook Client ID",
+			"regex": "(?i)(facebook|fb)(.{0,20})?['\"][0-9]{13,17}['\"]"
+		},
+		{
+			"name": "Facebook Secret Key",
+			"regex": "(?i)(facebook|fb)(.{0,20})?(?-i)['\"][0-9a-f]{32}['\"]"
+		},
+		{
+			"name": "Firebase Database Detect 1",
+			"regex": "[a-z0-9.-]+\\.firebaseio\\.com"
+		},
+		{
+			"name": "Firebase Database Detect 2",
+			"regex": "[a-z0-9.-]+\\.firebaseapp\\.com"
+		},
+		{
+			"name": "Sendgrid API Key 1",
+			"regex": "SG\\.[a-zA-Z0-9]{22}\\.[a-zA-Z0-9]{43}"
+		},
+		{
+			"name": "Slack API Key",
+			"regex": "xox[baprs]-([0-9a-zA-Z]{10,48})?"
+		},
+		{
+			"name": "Square Accesss Token",
+			"regex": "sq0atp-[0-9A-Za-z\\-_]{22}"
+		},
+		{
+			"name": "Square OAuth Secret",
+			"regex": "sq0csp-[0-9A-Za-z\\-_]{43}"
+		},
+		{
+			"name": "Atlassian API token",
+			"regex": "[a-z0-9]{24}"
+		},
+		{
+			"name": "Authress Service Client Access Key",
+			"regex": "(?:sc|ext|scauth|authress_[a-z0-9]{5,30}\\.[a-z0-9]{4,6}\\.acc_[a-z0-9-]{10,32}\\.[a-z0-9+/_=-]{30,120})"
+		},
+		{
+			"name": "Bitbucket Client ID",
+			"regex": "[a-z0-9]{32}"
+		},
+		{
+			"name": "Bitbucket Client Secret",
+			"regex": "[a-z0-9=_\\-]{64}"
+		},
+		{
+			"name": "Databricks API token",
+			"regex": "dapi[a-h0-9]{32}"
+		},
+		{
+			"name": "Defined Networking API token",
+			"regex": "dnkey-[a-z0-9=_\\-]{26}-[a-z0-9=_\\-]{52}"
+		},
+		{
+			"name": "Duffel API token",
+			"regex": "duffel_(test|live)_(?i)[a-z0-9_\\-=]{43}"
+		},
+		{
+			"name": "EasyPost API token",
+			"regex": "\\bEZAK(?i)[a-z0-9]{54}"
+		},
+		{
+			"name": "EasyPost test API token",
+			"regex": "\\bEZTK(?i)[a-z0-9]{54}"
+		},
+		{
+			"name": "Finicity Client Secret",
+			"regex": "[a-z0-9]{20}"
+		},
+		{
+			"name": "Flutterwave Encryption Key",
+			"regex": "FLWSECK_TEST-(?i)[a-h0-9]{12}"
+		},
+		{
+			"name": "Flutterwave Secret Key",
+			"regex": "FLWSECK_TEST-(?i)[a-h0-9]{32}-X"
+		},
+		{
+			"name": "Finicity Public Key",
+			"regex": "FLWPUBK_TEST-(?i)[a-h0-9]{32}-X"
+		},
+		{
+			"name": "Grafana api key",
+			"regex": "eyJrIjoi[A-Za-z0-9]{70,400}={0,2}"
+		},
+		{
+			"name": "Grafana cloud api token",
+			"regex": "glc_[A-Za-z0-9+/]{32,400}={0,2}"
+		},
+		{
+			"name": "Grafana service account token",
+			"regex": "glsa_[A-Za-z0-9]{32}_[A-Fa-f0-9]{8}"
+		},
+		{
+			"name": "HashiCorp Terraform user/org API token",
+			"regex": "(?i)[a-z0-9]{14}\\.atlasv1\\.[a-z0-9\\-_=]{60,70}"
+		},
+		{
+			"name": "Lob Publishable API Key",
+			"regex": "(test|live)_pub_[a-f0-9]{31}"
+		},
+		{
+			"name": "Lob API Key",
+			"regex": "(live|test)_[a-f0-9]{35}"
+		},
+		{
+			"name": "MapBox API token",
+			"regex": "pk\\.[a-z0-9]{60}\\.[a-z0-9]{22}"
+		},
+		{
+			"name": "planetscale-api-token",
+			"regex": "pscale_tkn_(?i)[a-z0-9=\\-_\\.]{32,64}"
+		},
+		{
+			"name": "npm-access-token",
+			"regex": "npm_[a-z0-9]{36}"
+		},
+		{
+			"name": "planetscale-password",
+			"regex": "pscale_pw_(?i)[a-z0-9=\\-_\\.]{32,64}"
+		},
+		{
+			"name": "planetscale-oauth-token",
+			"regex": "pscale_oauth_(?i)[a-z0-9=\\-_\\.]{32,64}"
+		},
+		{
+			"name": "prefect-api-token",
+			"regex": "pnu_[a-z0-9]{36}"
+		},
+		{
+			"name": "pulumi-api-token",
+			"regex": "pul-[a-f0-9]{40}"
+		},
+		{
+			"name": "sendgrid-api-token",
+			"regex": "SG\\.(?i)[a-z0-9=_\\-\\.]{66}"
+		},
+		{
+			"name": "Shippo API token",
+			"regex": "shippo_(live|test)_[a-f0-9]{40}"
+		},
+		{
+			"name": "Sidekiq Secret",
+			"regex": "[a-f0-9]{8}:[a-f0-9]{8}"
+		},
+		{
+			"name": "Stripe Access Token",
+			"regex": "(?i)(sk|pk)_(test|live)_[0-9a-z]{10,32}"
+		},
+		{
+			"name": "Twitter API Key",
+			"regex": "[a-z0-9]{25}"
+		},
+		{
+			"name": "Twitter Bearer Token",
+			"regex": "A{22}[a-zA-Z0-9%]{80,100}"
+		},
+		{
+			"name": "Twitter Access Token",
+			"regex": "[[0-9]{15,25}-[a-zA-Z0-9]{20,40}"
+		},
+		{
+			"name": "Vault Service Token",
+			"regex": "hvs\\.[a-z0-9_-]{90,100}"
+		},
+		{
+			"name": "Vault Batch Token",
+			"regex": "hvb\\.[a-z0-9_-]{138,212}"
+		},
+		{
+			"name": "Yandex AWS Access Token",
+			"regex": "YC[a-zA-Z0-9_\\-]{38}"
+		},
+		{
+			"name": "Yandex API Key",
+			"regex": "AQVN[A-Za-z0-9_\\-]{35,38}"
+		},
+		{
+			"name": "Yandex Access Token",
+			"regex": "t1\\.[A-Z0-9a-z_-]+[=]{0,2}\\.[A-Z0-9a-z_-]{86}[=]{0,2}"
+		},
+		{
+			"name": "Age secret key",
+			"regex": "AGE-SECRET-KEY-1[QPZRY9X8GF2TVDW0S3JN54KHCE6MUA7L]{58}"
+		},
+		{
+			"name": "Typeform API token",
+			"regex": "tfp_[a-z0-9\\-_\\.=]{59}"
+		},
+		{
+			"name": "Telegram Bot API Token",
+			"regex": "(?i)(?:^|[^0-9])([0-9]{5,16}:A[a-zA-Z0-9_\\-]{34})(?:$|[^a-zA-Z0-9_\\-])"
+		},
+		{
+			"name": "Private Key",
+			"regex": "(?i)-----(?:(?:BEGIN|END) )(?:(?:EC|PGP|DSA|RSA|OPENSSH).)?PRIVATE.KEY(.BLOCK)?-----"
+		},
+		{
+			"name": "Rubygem API token",
+			"regex": "ubygems_[a-f0-9]{48}"
+		},
+		{
+			"name": "Postman API token",
+			"regex": "PMAK-(?i)[a-f0-9]{24}\\-[a-f0-9]{34}"
+		},
+		{
+			"name": "Readme API token",
+			"regex": "rdme_[a-z0-9]{70}"
+		}
+	]
+}
