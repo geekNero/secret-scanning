@@ -7,6 +7,6 @@ inputs:
     default: ''
 runs:
   using: "composite"
-    steps:
-      - run: ls
-        shell: bash
+  steps:
+    - run: ls
+      shell: bash
