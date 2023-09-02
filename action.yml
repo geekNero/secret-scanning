@@ -21,7 +21,7 @@ runs:
       run: python -m pip install --upgrade pip &&
            pip install -r testing-actions/requirements.txt
       shell: bash
-    - run: entrypoint.sh
+    - run: bash entrypoint.sh
       shell: bash
     - uses: actions/checkout@v3
       with:
