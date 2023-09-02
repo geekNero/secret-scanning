@@ -21,8 +21,8 @@ runs:
       run: python -m pip install --upgrade pip &&
            pip install -r testing-actions/requirements.txt
       shell: bash
-    - run: bash entrypoint.sh
+    - run: pwd
       shell: bash
-    - uses: actions/checkout@v3
-      with:
-        path: 'testing-actions/actions/'
+#    - uses: actions/checkout@v3
+#      with:
+#        path: 'testing-actions/actions/'
