@@ -8,17 +8,17 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: cd $GITHUB_WORKSPACE
-           git clone https://github.com/geekNero/testing-actions.git
-           cd testing-actions
-           mkdir actions
+    - run: cd $GITHUB_WORKSPACE &&
+           git clone https://github.com/geekNero/testing-actions.git &&
+           cd testing-actions &&
+           mkdir actions &&
       shell: bash
     - name: Setup Python
       uses: actions/setup-python@v3
       with:
         python-version: 3.9
     - name: Install Dependencies
-      run: python -m pip install --upgrade pip
+      run: python -m pip install --upgrade pip &&
            pip install -r testing-actions/requirements.txt
       shell: bash
     - run: entrypoint.sh
