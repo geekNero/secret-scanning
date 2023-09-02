@@ -1,4 +1,4 @@
 import os
+import sys
 
-var = os.environ["INPUT_EXCLUSIONS"]
-print(var)
+print(sys.argv)
