@@ -36,6 +36,10 @@ runs:
     - run: cd $GITHUB_WORKSPACE && cd testing-actions && 
            python3 entrypoint.py ${{ inputs.file-exclusions }} ${{ inputs.hash-exclusions }} ${{ inputs.plugin-exclusions }} ${{ inputs.custom-regexes }}
       shell: bash
+      name: Preparing Config
     - uses: actions/checkout@v3
       with:
         path: 'testing-actions/actions/'
+    - name: Secret Scanning
+      run: cd $GITHUB_WORKSPACE && cd testing-actions && python3 main.py
+      shell: bash

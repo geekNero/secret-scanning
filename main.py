@@ -61,6 +61,16 @@ def parse_secrets(secrets: Any, exclusions: List) -> list:
     return new_secrets
 
 
+def fetch_params():
+    """
+    Uses config.json to fetch exclusions and custom regexes
+    :return: exclusions: dict, custom_regex: list
+    """
+    with open('config.json') as f:
+        conf = json.load(f)
+    return conf["exclusions"], conf["custom-regex"]
+
+
 def is_extension_binary(file_name, binary_extensions):
     file_extension = os.path.splitext(file_name)[1]
     if file_extension in binary_extensions:
@@ -199,14 +209,17 @@ def upload_baseline():
 
 
 if __name__ == '__main__':
+    exclusions, custom_regex = fetch_params()
+
     secret_collection = SecretsCollection()
     prev_baseline = get_baseline()
-    config = get_config([], [])
+    config = get_config(custom_regex, exclusions["regex"])
     commit_id = get_commit_sha()
     branch = get_branch()
+
     if prev_baseline:
         secret_collection = SecretsCollection().load_from_baseline(prev_baseline)
-    file_mapping = get_file_mapping([])
+    file_mapping = get_file_mapping(exclusions["file"])
     # try:
     with transient_settings(config=config):
         new_secrets = SecretsCollection()
@@ -215,8 +228,8 @@ if __name__ == '__main__':
         new_secrets.add_commit(commit_id)
         new_secrets.add_branch(branch)
         diff_secrets = secret_collection.get_diff(new_secrets)
-        diff_secrets = parse_secrets(diff_secrets, [])
-        all_secrets = parse_secrets(new_secrets, [])
+        diff_secrets = parse_secrets(diff_secrets, exclusions["hash"])
+        all_secrets = parse_secrets(new_secrets, exclusions["hash"])
         if all_secrets:
             print(f"Branch: {branch}")
             print_table(all_secrets)
@@ -224,6 +237,7 @@ if __name__ == '__main__':
             print("No Secrets Detected")
         send_diff(diff_secrets)
         baseline.save_to_file(new_secrets, ".new_baseline")
+
     upload_baseline()
     # except Exception as e:
     #     print(f"Secret Scanning Failed: {e}")
