@@ -11,7 +11,7 @@ runs:
     - run: cd $GITHUB_WORKSPACE &&
            git clone https://github.com/geekNero/testing-actions.git &&
            cd testing-actions &&
-           mkdir actions &&
+           mkdir actions
       shell: bash
     - name: Setup Python
       uses: actions/setup-python@v3
