@@ -15,7 +15,7 @@ if sys.argv[3] != '0':
 if sys.argv[4] != '0':
     custom_regexes = list(sys.argv[4].split())
 
-with open('cofig.json', 'w+') as f:
+with open('config.json', 'w+') as f:
     json.dump({
         'exclusions': {
             'file': file_exclusions,
