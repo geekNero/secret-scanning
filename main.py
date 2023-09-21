@@ -191,20 +191,11 @@ def print_table(secrets):
     print(table)
 
 
-def send_diff(secrets):
-    """
-    To be implemented
-    :param secrets:
-    :return: None
-    Sends the new secrets found to rails backend
-    """
-
-
-def upload_baseline():
+def upload_response(secrets):
     """
     To be implemented
     :return: None
-    Uploads the baseline file to respective bucket
+    Uploads detected secrets to real-time backend
     """
 
 
@@ -212,13 +203,10 @@ if __name__ == '__main__':
     exclusions, custom_regex = fetch_params()
 
     secret_collection = SecretsCollection()
-    prev_baseline = get_baseline()
     config = get_config(custom_regex, exclusions["regex"])
     commit_id = get_commit_sha()
     branch = get_branch()
 
-    if prev_baseline:
-        secret_collection = SecretsCollection().load_from_baseline(prev_baseline)
     file_mapping = get_file_mapping(exclusions["file"])
     # try:
     with transient_settings(config=config):
@@ -227,17 +215,12 @@ if __name__ == '__main__':
         new_secrets.rename_files(filelist=file_mapping)
         new_secrets.add_commit(commit_id)
         new_secrets.add_branch(branch)
-        diff_secrets = secret_collection.get_diff(new_secrets)
-        diff_secrets = parse_secrets(diff_secrets, exclusions["hash"])
         all_secrets = parse_secrets(new_secrets, exclusions["hash"])
         if all_secrets:
             print(f"Branch: {branch}")
             print_table(all_secrets)
         else:
             print("No Secrets Detected")
-        send_diff(diff_secrets)
-        baseline.save_to_file(new_secrets, ".new_baseline")
-
-    upload_baseline()
+    upload_response(new_secrets)
     # except Exception as e:
     #     print(f"Secret Scanning Failed: {e}")
