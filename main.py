@@ -8,6 +8,8 @@ from detect_secrets.settings import transient_settings
 from detect_secrets.settings import default_settings, get_settings
 from typing import List, Any
 import magic
+import hmac
+import hashlib
 
 
 class Validation:
@@ -104,14 +106,6 @@ def get_branch():
     return os.environ["GITHUB_REF_NAME"]
 
 
-def get_baseline():
-    """
-    To be implemented
-    :return: Previous Baseline of the customer
-    """
-    return None
-
-
 def get_config(custom_regex, exclusions):
     """
     To be implemented
@@ -193,10 +187,47 @@ def print_table(secrets):
 
 def upload_response(secrets):
     """
-    To be implemented
     :return: None
     Uploads detected secrets to real-time backend
     """
+    url = os.environ["CDX_API_ENDPOINT"]
+    token = os.environ["CDX_AUTHZ_TOKEN"]
+    secret_key = os.environ["SECRET_KEY"]
+    headers = {
+        "content-type": "application/json",
+        'X-GitHub-Event': "push",
+        "Authorization": f"token {token}"
+    }
+    data = {
+        "organization": {
+            "login": os.environ["GITHUB_REPOSITORY_OWNER"]
+        },
+        "repository": {
+            "name": os.environ["GITHUB_REPOSITORY"]
+        },
+        "action": "github_rt_push_changes",
+        "secretScanning": {"scan": {
+            "CI": True,
+            "repository": {
+                "full_name": os.environ["GITHUB_REPOSITORY"],
+                "branch": get_branch(),
+                "commit": get_commit_sha(),
+            },
+            "secrets": secrets,
+        },
+            "sender": {
+            "login": os.environ["GITHUB_TRIGGERING_ACTOR"]
+        }
+        }
+    }
+    digest = hmac.new(secret_key.encode('utf-8'), json.dumps(data, separators=(",", ":")).encode('utf-8'), hashlib.sha256)
+    s = "sha256=" + digest.hexdigest()
+    headers["X-Hub-Signature-256"] = s
+    response = requests.post(url=url, data=data, headers=headers)
+    if response.status_code == 200:
+        print("Results updated succesfully")
+    else:
+        print("Failed to update results")
 
 
 if __name__ == '__main__':
@@ -221,6 +252,6 @@ if __name__ == '__main__':
             print_table(all_secrets)
         else:
             print("No Secrets Detected")
-    upload_response(new_secrets)
+    upload_response(new_secrets.json())
     # except Exception as e:
     #     print(f"Secret Scanning Failed: {e}")
