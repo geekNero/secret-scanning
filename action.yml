@@ -1,7 +1,8 @@
 name: Secret Scanning
 description: A custom GitHub Action
-icon: chevron-up
-color: red
+branding:
+  icon: chevron-up
+  color: red
 inputs:
   file-exclusions:
     description: 'Comma-separated list of files to exclude'
