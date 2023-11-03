@@ -24,8 +24,8 @@ runs:
   using: "composite"
   steps:
     - run: cd $GITHUB_WORKSPACE &&
-           git clone https://github.com/geekNero/testing-actions.git &&
-           cd testing-actions &&
+           git clone https://github.com/geekNero/secret-scanning.git &&
+           cd secret-scanning &&
            mkdir actions
       shell: bash
     - name: Setup Python
@@ -34,15 +34,15 @@ runs:
         python-version: 3.9
     - name: Install Dependencies
       run: python -m pip install --upgrade pip &&
-           pip install -r testing-actions/requirements.txt
+           pip install -r secret-scanning/requirements.txt
       shell: bash
-    - run: cd $GITHUB_WORKSPACE && cd testing-actions && 
+    - run: cd $GITHUB_WORKSPACE && cd secret-scanning && 
            python3 entrypoint.py ${{ inputs.file-exclusions }} ${{ inputs.hash-exclusions }} ${{ inputs.plugin-exclusions }} ${{ inputs.custom-regexes }}
       shell: bash
       name: Preparing Config
     - uses: actions/checkout@v3
       with:
-        path: 'testing-actions/actions/'
+        path: 'secret-scanning/actions/'
     - name: Secret Scanning
-      run: cd $GITHUB_WORKSPACE && cd testing-actions && python3 main.py
+      run: cd $GITHUB_WORKSPACE && cd secret-scanning && python3 main.py
       shell: bash
